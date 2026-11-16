@@ -2,10 +2,13 @@
 
 The quick-fix list for a website that was vibe-coded and shipped without a review. Run it on any website before launch, and on any existing site that feels broken. Each item is a concrete check — pass or fail, no judgment calls.
 
+## ❌ vs fix — read this first
+Three items are marked **❌ REMOVE** (from the source image). These are not things to repair — they are things that must not exist at all. Delete the cause, don't patch around it. The other 17 items are **FIX** — repair them so they work correctly.
+
 ## The 20 fixes
 | # | Fix | What "fixed" looks like |
 |---|---|---|
-| 1 | **No horizontal scroll** | The page never scrolls sideways at any width (360px–1920px). If it does, something overflows — find the element, fix the width. |
+| 1 | **❌ REMOVE — No horizontal scroll** | The page never scrolls sideways at any width (360px–1920px). Horizontal scroll is itself the defect — remove the overflowing element or fix its width so no sideways scroll exists. Don't add a workaround; eliminate the cause. |
 | 2 | **No broken links** | Every link on the page leads somewhere real. Click every link (including footer, nav, and social icons). A link to `#` or nowhere is a broken link. |
 | 3 | **Mobile menu** | On mobile, navigation is a working menu (hamburger or bottom bar). Every nav item is reachable. The menu closes after a tap. |
 | 4 | **Favicon** | The tab shows the product's favicon, not the framework default. It works in light and dark browser chrome. |
@@ -18,8 +21,8 @@ The quick-fix list for a website that was vibe-coded and shipped without a revie
 | 11 | **No broken buttons** | Every button does something. Click every button — a button that does nothing (no handler, no link, no feedback) is broken. |
 | 12 | **Success messages** | After a successful action (form submit, save, purchase), the user sees a specific confirmation: what happened, to whom/what. Not "Success!" alone. |
 | 13 | **Error messages** | When something fails, the user sees what happened + what to do next, in plain words. Never a blank screen, never a raw error, never "something went wrong" with no next step. |
-| 14 | **No placeholder text** | No lorem ipsum, no "Your text here", no "Coming soon" blocks, no fake names (John Doe, Acme). Every word on the page is real or clearly marked to replace. |
-| 15 | **No unused nav** | Every nav item leads to a real page with real content. A nav item that goes nowhere (or to an empty page) is deleted, not hidden. |
+| 14 | **❌ REMOVE — No placeholder text** | No lorem ipsum, no "Your text here", no "Coming soon" blocks, no fake names (John Doe, Acme). Placeholder text is deleted, not replaced with prettier placeholder text. Every word on the page is real or clearly marked to replace. |
+| 15 | **❌ REMOVE — No unused nav** | Every nav item leads to a real page with real content. A nav item that goes nowhere (or to an empty page) is deleted, not hidden. Hiding it in a menu or a dropdown is not a fix — the item goes. |
 | 16 | **No mobile overflow** | On a 360px screen, nothing overflows, nothing is cut off, no text runs off the edge, no button is unreachable. |
 | 17 | **Clickable logo** | The logo links to the home page. Always. On every page. |
 | 18 | **Clickable phone number** | Phone numbers are `tel:` links. Tapping one on a phone starts a call. |
