@@ -40,12 +40,19 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `supply-chain-sbom.md` | Dependency audit, lockfile discipline, SBOM (CycloneDX/SPDX), provenance |
 | `mastg-mobile-testing.md` | OWASP MASTG mobile testing — MASVS categories, static + dynamic + manual |
 | `cloud-misconfig.md` | Cloud console settings — public buckets, IAM, secrets, encryption, logging, backups |
+| `secrets-scanning.md` | Find secrets in code, history, logs, chat — rotate first, purge second |
+| `auth-testing.md` | Attack-test JWT, sessions, OAuth, 2FA, login |
+| `container-security.md` | Docker image audit — minimal base, scan, non-root, no secrets in layers |
+| `privacy-dataflow.md` | Trace personal data — the map, minimum collection, third parties, retention + deletion |
 
 ## References inside security-fix
 | File | What it is |
 |---|---|
 | `fix-patterns.md` | Secure code patterns per vulnerability class — SQLi, XSS, CSRF, IDOR, auth, SSRF, path traversal, XXE, deserialization, secrets, rate limiting |
 | `verify-rollback.md` | Prove the fix (re-run the check, regression test, independent verification, live check) + plan the rollback before pushing |
+| `secret-rotation.md` | A leaked secret, step by step — rotate first, remove second, purge last, verify, record |
+| `hotfix-process.md` | Emergency fix for a live vulnerability — triage, contain, smallest fix, verify on live, disclose |
+| `dependency-fix.md` | A vulnerable dependency — upgrade, patch, fork, or replace, in that order |
 
 ## References inside design-unslop
 | File | What it is |
@@ -81,6 +88,10 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `wcag-checklist.md` | WCAG 2.2 concrete criteria — contrast, keyboard, alt text, touch targets, reduced motion |
 | `iconography.md` | A consistent icon system — one set, one stroke, 24px grid, no emoji as icons |
 | `design-self-review.md` | Critique your own work before shipping — 5-second test, squint test, every state, phone test |
+| `form-design.md` | Forms that users finish — labels visible, inline validation, honest submit, multi-step with progress |
+| `layout-grid.md` | Grid systems, spacing scale, composition — 12-col desktop / 4-col mobile, one dominant thing |
+| `design-tokens.md` | The design system as code — semantic color, spacing/type/radius/shadow scales |
+| `mobile-app-design.md` | Native mobile patterns — bottom tabs, thumb zone, gestures with alternatives, offline states |
 
 ## References inside code-humanizer
 
@@ -93,6 +104,9 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `naming-guide.md` | Human names — domain language, booleans as questions, verbs for functions, no generic names |
 | `refactor-readability.md` | Restructure AI code so it reads human — extract, flatten, delete dead code, name the magic numbers |
 | `readme-docs-voice.md` | Docs that sound like a person — what/why/how, real commands, no fluff, honest limits, stranger test |
+| `commit-messages.md` | Human commit messages — lowercase, short, imperative, what + why not how |
+| `error-messages.md` | User-facing errors — what happened in plain words, what to do next, no codes, no blame |
+| `test-naming.md` | Readable tests — names that are sentences about behaviour, with the condition, one behaviour per test |
 
 ## References inside minimal-code
 
@@ -104,6 +118,9 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `ponytail.md` | The ponytail method merged — decision ladder, shortcut comments, never-cut list, levels, review/audit/debt modes |
 | `abstraction-judgment.md` | AHA — when NOT to abstract: rule of three, same reason to change, clear name, no flag-soup |
 | `yagni.md` | You Aren't Gonna Need It — build only what today needs: no speculative features, no config for one value, no dead code |
+| `dependency-minimalism.md` | The dependency diet — count them, make each earn its place, one per job, small + maintained |
+| `config-minimalism.md` | Config diet — sane defaults, no config for one value, every option has a user, config in one place |
+| `api-surface-minimalism.md` | API surface diet — fewest endpoints, fewest params, no speculative endpoints, one shape per resource |
 
 ## Principles
 - **Complete, not partial.** Every check runs. N/A only with evidence the mechanism doesn't exist.
