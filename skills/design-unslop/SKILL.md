@@ -32,8 +32,17 @@ The design is made right the first time. Follow the workflow: direction first, t
 ### Mode B — Transform existing (full unslop)
 The app already exists and looks vibe-coded. Follow the full workflow: render it, audit the tells, write the direction, subtract, run the 9 passes in order, add the moment, final audit. Keep the product — features, real content, and section order stay. What changes is that every size, color, word, and image becomes deliberate.
 
+## Multi-agent roles (never one agent doing all three)
+| Role | Job | Must NOT do |
+|---|---|---|
+| **Designer** | Write the direction, deal the themes, run the passes, build the screen. | Review its own design. Declare it "done". |
+| **Reviewer** | Fresh eyes: run the final audit + the Design Gate independently, with fresh evidence (screenshots, not the Designer's word). | Change the design. Trust the Designer's word without evidence. |
+| **Implementer** | Build the approved design into code, lib-first, tokens only. | Change the direction, palette, type, or layout while implementing. |
+
+One agent per role. If only one agent is available, it designs only and reports — it does not review and approve its own work.
+
 ## Workflow
-1. **Render it (Mode B) / Read the project (Mode A).** Screenshot the screen at its real size and judge that, not the code. If it will be seen small (a phone, a thumbnail), judge it at that size too. For a new build, read the project first: its fonts, palette, spacing, framework, and what the product does.
+1. **Render it (Mode B) / Read the project (Mode A).** Screenshot the screen at its real size and judge that, not the code. If it will be seen small (a phone, a thumbnail), judge it at that size too. For a new build, read the project first: its fonts, palette, spacing, framework, and what the product does. If a `design.md` exists (system lock), read it first — it overrides everything below.
 2. **Audit (Mode B only).** Walk `references/vibe-code-tells.md`. List every tell, one line each, with where it lives. Decide the scope:
    - Tells across color, type, icons, and copy → run everything below.
    - A designed screen with a few tells → fix only those. Keep its palette, type, layout, and visual. Put bigger ideas in the report.
@@ -44,8 +53,11 @@ The app already exists and looks vibe-coded. Follow the full workflow: render it
 6. **Run the 9 passes in order,** finishing each across the whole screen (see `references/unslop-passes.md`): 1. Spacing, 2. Color, 3. Icons, 4. Copy, 5. Type, 6. Layout, 7. Details, 8. The moment, 9. Motion. Order matters: rhythm changes how everything else reads, copy length decides type size and layout, visuals and motion come last so they fit a screen that already works without them.
 7. **Lib-first.** Never hand-build a component an installed library has. Check the component libraries in `references/component-libraries.md` first (shadcn, kokonutui, astryx, 21st.dev, react-bits). Use the library's component, styled to the direction.
 8. **Modern platform patterns first.** For any HTML/CSS/client-side JS pattern (dialog, table, dark mode, forms, validation, accessibility, performance), consult the modern web guidance in `references/modern-web.md` BEFORE writing code or adding a dependency. Native platform pattern beats a JS workaround.
-9. **Final audit.** Run the checklist in `references/vibe-code-tells.md` again + the Hallmark Floor in `references/design-principles.md`. Anything that fails goes back to its pass. Render again and compare with the audit list.
-10. **Report.** The direction, what changed per pass, the theme picked (Mode A), the libraries used, and any image prompt written.
+9. **Check the gates.** Run every checklist that applies, in this order: responsive (`references/responsive-checklist.md`), accessibility (`references/accessibility-checklist.md`), content states (`references/content-states.md`), performance budget (`references/performance-budget.md`), dark mode if the product has one (`references/dark-mode.md`). Screen-specific rules live in `references/screen-templates.md`. Each checklist feeds the Design Gate.
+10. **Gate.** The Reviewer runs the Design Gate independently (see `references/design-gate.md`). Ship is blocked until the gate passes. Every open item carries a severity + fix route.
+11. **Regression track.** Compare this run against the previous run (see `references/design-regression.md`). Report the delta first: tells fixed, tells regressed, still open. A regression is Critical-priority.
+12. **Lock the system.** After the design ships, write/update `design.md` (see `references/design-system-lock.md`) so the next page uses the same system and doesn't drift.
+13. **Report.** The direction, what changed per pass, the theme picked (Mode A), the libraries used, the gate verdict, and any image prompt written.
 
 ## Direction (5 lines, from the product — never from what's trending)
 - **Product:** what it does and for whom, in one sentence.
