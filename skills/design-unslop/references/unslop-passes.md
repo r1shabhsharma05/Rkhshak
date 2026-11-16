@@ -43,6 +43,7 @@ Cuts generated screens need most:
 - Read each line next to what's already on screen. If it repeats a number or word nearby, cut it.
 - **Mock content is specific.** Never Maya, Sarah, Alex, Acme, or John Doe. Use a real-sounding person and detail.
 - Fake proof gets deleted. If a claim can't be checked, ask, then make it specific or cut it. A real number is the strongest copy there is.
+- A placeholder number or metric with no real replacement is not content — remove it from the screen. If the stat itself is a real feature (the product shows that count), keep the label and put a labelled material-needed slot in place of the number, and list it in the report's material-still-needed. Never invent a number.
 
 ## 5. Type
 - Choose type for the character. One interface family plus at most one partner, used for one distinctive decision. A display face appears once.
@@ -51,7 +52,7 @@ Cuts generated screens need most:
 - `tabular-nums` and one number format across the screen. Negative tracking only on display sizes.
 
 ## 6. Layout
-- Everything stacked and centered, three equal cards, bento grids, and a picture panel beside a form column are all defaults. Size by content: give the important thing more room and let content break symmetry. To get out of the form-beside-picture default, let the form sit in the material rather than beside it.
+- Everything stacked and centered, three equal cards, bento grids, and a picture panel beside a form column are all defaults. Size by content: give the important thing more room and let content break symmetry. After subtracting cards, restructure the layout too — the grid that held the cards goes with them; size each remaining item by its content (one dominant, the rest smaller) and never leave the old equal-column grid behind with only the chrome removed. To get out of the form-beside-picture default, let the form sit in the material rather than beside it.
 - Check the largest viewport too. A dead band is empty space with no material and no job. Fill it with the world (a surface, real content) or compose the form into it; don't just scale the type up.
 - One primary action and at most one secondary.
 - Apps keep real app proportions. Heroes are composed as a whole first screen with no dead band.
