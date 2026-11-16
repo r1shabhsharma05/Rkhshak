@@ -31,6 +31,9 @@ Works with Claude, Codex, and any agent that reads SKILL.md. The rules are writt
 6. **Verify.** Run the checks in `references/measure.md`: tests pass, no dead code, the diff is as small as it can be. Report the diff size (lines added vs lines removed). End with one or two lines: what you skipped or did not check, and any risk the user must know.
 7. **Judge abstractions.** Before abstracting, run `references/abstraction-judgment.md` (AHA): rule of three, same reason to change, clear name, no flag-soup. If the abstraction isn't earned yet, leave the duplication.
 8. **YAGNI.** Before adding anything, run `references/yagni.md`: is there a requirement, a user, or a test that needs this today? If not, don't build it. No config for one value, no future-proof frameworks, no dead code kept "in case".
+9. **Dependency diet.** Before adding a dependency, run `references/dependency-minimalism.md`: count them, make it earn its place, one per job, small + maintained, remove what you don't use.
+10. **Config diet.** Before adding an option, run `references/config-minimalism.md`: sane defaults first, no config for one value, every option has a user, config in one place.
+11. **API diet.** Before adding an endpoint, run `references/api-surface-minimalism.md`: fewest endpoints, fewest params, no speculative endpoints, one shape per resource.
 
 ## References
 | File | What it covers |
@@ -41,6 +44,9 @@ Works with Claude, Codex, and any agent that reads SKILL.md. The rules are writt
 | `references/ponytail.md` | The ponytail method merged — decision ladder, shortcut comments, never-cut list, levels, review/audit/debt modes |
 | `references/abstraction-judgment.md` | AHA — when NOT to abstract: rule of three, same reason to change, clear name, no flag-soup |
 | `references/yagni.md` | You Aren't Gonna Need It — build only what today needs: no speculative features, no config for one value, no dead code |
+| `references/dependency-minimalism.md` | The dependency diet — count them, make each earn its place, one per job, small + maintained, remove unused |
+| `references/config-minimalism.md` | Config diet — sane defaults, no config for one value, every option has a user, config in one place |
+| `references/api-surface-minimalism.md` | API surface diet — fewest endpoints, fewest params, no speculative endpoints, one shape per resource |
 
 ## Levels
 | Level | Behavior |
