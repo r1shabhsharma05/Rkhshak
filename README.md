@@ -28,6 +28,12 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `ux-patterns-checklist.md` | 20 SaaS UX patterns — separate gate |
 | `regression-tracking.md` | Compare runs over time — new, fixed, regressed, still open |
 | `audit-gate.md` | The deploy gate + severity/fix mapping + report format |
+| `owasp-api-top-10.md` | OWASP API Security Top 10 (2023), mapped to the 85 checks |
+| `mobile-security.md` | Mobile security deep-dive — pinning, root/jailbreak, biometrics, release hardening |
+| `ci-integration.md` | Run automatable checks on every PR + GitHub Actions workflow template |
+| `threat-model.md` | STRIDE threat-model template — run before the audit |
+| `incident-response.md` | 6-step incident playbook + key-leak and data-exposure steps |
+| `compliance-mapping.md` | 85 checks mapped to GDPR, DPDP, SOC 2, PCI-DSS |
 
 ## References inside design-unslop
 | File | What it is |
@@ -47,6 +53,14 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `dark-mode.md` | Dark mode rules — surfaces, color, text |
 | `design-system-lock.md` | The design.md template — lock the system so pages don't drift |
 | `design-regression.md` | Before/after + compare runs — new, fixed, regressed, still open |
+| `motion-system.md` | Easing, durations, stagger — a motion system |
+| `typography-color-system.md` | Concrete type scale + palette derivation method |
+| `data-viz.md` | Which chart for which question, honest axes, accessibility |
+| `microinteractions.md` | Feedback for every touch — press, toggle, drag, swipe, copy |
+| `ux-writing.md` | Microcopy patterns — buttons, errors, empty states, success |
+| `handoff.md` | Figma/dev handoff specs — measurements, assets, states, behavior |
+| `user-testing.md` | Test with real people — 5-second test, task test |
+| `21st-dev-prompts.md` | 21st.dev prompt library — ready-made searches + inspiration briefs |
 
 ## Principles
 - **Complete, not partial.** Every check runs. N/A only with evidence the mechanism doesn't exist.
