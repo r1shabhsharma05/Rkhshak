@@ -104,6 +104,10 @@ Delete motion by default: looping pulses on things that aren't live, shimmer on 
 | `references/vibe-code-fixes.md` | 20 things to fix on a vibe-coded website — a launch gate: no horizontal scroll, no broken links/buttons, no placeholder text, favicon, titles, meta, mobile. |
 | `references/backgrounds.md` | 22 background techniques to make designs less flat — felt, fluted glass, halftone, grain, contour lines, and more. One per screen, from the world. |
 | `references/animation-techniques.md` | 20 animation techniques with concrete values — ease-out entrances, 30ms stagger, 0.97 press, arcs, rubber band, layoutId. Extends the motion system. |
+| `references/landing-page-design.md` | Landing page structure — hero, social proof, benefits, pricing, FAQ — one action per screen, real proof, fast, mobile-first. |
+| `references/wcag-checklist.md` | WCAG 2.2 concrete criteria — contrast ratios, keyboard, alt text, touch targets, reduced motion — with a 5-step test method. |
+| `references/iconography.md` | A consistent icon system — one set, one stroke, 24px grid, labels for actions, no emoji as icons. |
+| `references/design-self-review.md` | Critique your own work before shipping — 5-second test, squint test, every state, phone test, read copy aloud, remove one element. |
 
 ## Awwwards bar (the acceptance bar, never an award claim)
 A cohesive, memorable site whose visual idea, media, typography, and motion tell the same story. First viewport is the strongest authored moment. Original imagery, honest icons/logos (real company marks only, never fake proof), photo avatars (never initials or generated people as real customers), complete semantic page (nav, sections, CTA, footer, form states, keyboard focus), performance (lazy loading, bounded transforms, no continuously animated offscreen content). Reject generic gradient blobs, ornamental bento grids, glass applied everywhere, stock component layouts, fake testimonials, and motion with no narrative role. Never describe the result as award-winning unless the user provides verifiable evidence. Full bar in `references/templates.md`.
