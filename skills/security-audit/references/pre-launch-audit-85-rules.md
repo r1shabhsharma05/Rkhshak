@@ -2,7 +2,6 @@
 
 **Source:** Mayank Shah, Pre-Launch Security Audit v2.0 (Nov 2026) — 14-page PDF, @mayankshah_ai.
 **Bar:** all 85 checks PASS. No section skipped.
-**Provenance:** battle-tested on production apps (SafeLife went from 27/85 to 61/85 using these checks).
 
 **Original stack in the PDF:** Emergent apps — React, FastAPI, MongoDB, Expo, Emergent Auth, Stripe/Razorpay, Universal LLM Key (`sk-emergent-`). Map each mechanism to your stack's equivalent (see below) — if a check's mechanism genuinely does not exist in your stack, the audit says so explicitly, never silently drops it.
 
@@ -25,7 +24,7 @@
 ## Safety rules (never break)
 
 1. Audit only this project. Never scan, test or send requests to any app, domain or service the user does not own.
-2. Read-only by default. No code, config, database or setting changes until he explicitly approves that specific fix.
+2. Read-only by default. No code, config, database or setting changes until the user explicitly approves that specific fix.
 3. No destructive tests: no deleting data, no load floods, no real payments, no emails/SMS to real people. Live tests only on staging/preview with test accounts.
 4. Never print a full secret. Show only its first 4 characters + file:line (e.g. `sk-e•••• in backend/server.py:12`).
 5. Never ask anyone to paste a secret into chat. Ask to confirm a fact about it instead (e.g. "Is there a spending limit on this key?").
@@ -59,7 +58,7 @@
 | 5. Input and output handling | YES |
 | 6. API abuse protection | YES |
 | 7. Payments and money | VERIFY FIRST — N/A only if no payment code exists anywhere |
-| 8. AI features | YES (Gnani voice) |
+| 8. AI features | YES |
 | 9. Dependencies and supply chain | YES |
 | 10. Deployment and configuration | YES |
 | 11. Cost and code health | YES |
