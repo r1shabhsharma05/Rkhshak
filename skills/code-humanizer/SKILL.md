@@ -32,6 +32,9 @@ Works with Claude, Codex, and any agent that reads SKILL.md. The rules are writt
 7. **Name things human.** Run every name against `references/naming-guide.md`: domain language, booleans as questions, verbs for functions, no generic names (`data`, `result`, `temp`) in a real scope.
 8. **Refactor for readability.** If the code works but reads like a generator wrote it, restructure it with `references/refactor-readability.md`: extract intent-named functions, flatten nesting with early returns, delete dead code, replace magic numbers.
 9. **Docs voice.** READMEs and docs go through `references/readme-docs-voice.md`: what/why/how, real commands that work, no marketing fluff, honest limitations, stranger test (install + run in under 10 minutes from the README alone).
+10. **Commit messages.** Every commit message goes through `references/commit-messages.md`: lowercase, human, short, imperative — what + why, not how.
+11. **Error messages.** User-facing errors go through `references/error-messages.md`: what happened in plain words, what to do next, no codes, no jargon, no blame.
+12. **Test names.** Every test is named through `references/test-naming.md`: a sentence about behaviour, with the condition in the name, one behaviour per test.
 
 ## References
 | File | What it covers |
@@ -43,6 +46,9 @@ Works with Claude, Codex, and any agent that reads SKILL.md. The rules are writt
 | `references/naming-guide.md` | Human names — domain language, booleans as questions, verbs for functions, no generic names |
 | `references/refactor-readability.md` | Restructure AI code so it reads human — extract, flatten, delete dead code, name the magic numbers |
 | `references/readme-docs-voice.md` | Docs that sound like a person — what/why/how, real commands, no fluff, honest limits, stranger test |
+| `references/commit-messages.md` | Human commit messages — lowercase, short, imperative, what + why not how |
+| `references/error-messages.md` | User-facing errors — what happened in plain words, what to do next, no codes, no blame |
+| `references/test-naming.md` | Readable tests — names that are sentences about behaviour, with the condition, one behaviour per test |
 
 ## Rules
 - **Never fake mistakes.** No deliberate typos, no fake bugs, no sloppy formatting to "look human". Human code is good code. The skill removes AI tells, it does not add human flaws.
