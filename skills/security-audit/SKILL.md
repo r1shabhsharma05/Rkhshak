@@ -33,7 +33,7 @@ One agent per role. If only one agent is available, it audits only and reports �
 ## Workflow
 1. **Graph first.** Build the project graph (graphify) before reading code. Consult the graph to understand the app. Never read the whole codebase — read only the specific files the graph points to.
 2. **Scope.** Confirm the target: repo, live URL, stack, what is in scope (auth, payments, AI, mobile). If a check's mechanism genuinely does not exist in this stack, mark it N/A explicitly with the reason — never silently drop it.
-3. **Audit.** Run EVERY check in `references/pre-launch-audit-85-rules.md` (Areas 1–13, 67 code checks + H1–H18 human checks) plus `references/owasp-top-10.md` and `references/vibe-code-security-checklist.md`. For a full/deep review, also follow the Cloudflare 6-phase workflow in `references/cloudflare-audit.md`. Run `references/launch-readiness-checklist.md` and `references/ux-patterns-checklist.md` as separate, non-security passes (see below). List every route, collection, and file checked in AUDIT.md so a PASS can be trusted.
+3. **Audit.** Run EVERY check in `references/pre-launch-audit-85-rules.md` (Areas 1–13, 67 code checks + H1–H18 human checks) plus `references/owasp-top-10.md`, `references/owasp-api-top-10.md` (for APIs), `references/mobile-security.md` (for mobile apps), and `references/vibe-code-security-checklist.md`. For a full/deep review, also follow the Cloudflare 6-phase workflow in `references/cloudflare-audit.md` and build a threat model first (`references/threat-model.md`). Run `references/launch-readiness-checklist.md` and `references/ux-patterns-checklist.md` as separate, non-security passes (see below). List every route, collection, and file checked in AUDIT.md so a PASS can be trusted.
 4. **Live probe.** Do not trust code alone. Probe the LIVE app: login flow, session handling, rate limits, CORS, bot protection, error messages. A check passes only on observed behaviour, not on code that "looks right".
 5. **Report.** Write AUDIT.md in the format in `references/audit-gate.md`. Verdict, counts, open issues (Critical first), user to-do list, "do this on your live app" steps.
 6. **Fix round (only on user approval).** Fixer fixes approved findings, smallest complete change each (see Fix rules). After each fix, the Verifier re-runs that check with fresh evidence.
@@ -57,6 +57,12 @@ One agent per role. If only one agent is available, it audits only and reports �
 | Launch readiness | `references/launch-readiness-checklist.md` | Pre-launch checks (privacy, terms, cookies, SEO, performance, accessibility, legal), merged from four viral lists. Separate gate — not security. |
 | UX patterns | `references/ux-patterns-checklist.md` | 20 SaaS UX patterns. Separate gate — not security. |
 | Regression tracking | `references/regression-tracking.md` | Compare each run against the previous one — new, fixed, regressed, still open. |
+| OWASP API Top 10 | `references/owasp-api-top-10.md` | The 10 most critical API risks (BOLA, broken auth, mass-assignment, resource consumption, SSRF), mapped to the 85 checks. Run on every API. |
+| Mobile security | `references/mobile-security.md` | Deep mobile checks beyond Area 13: secure storage, certificate pinning, root/jailbreak detection, biometric auth, push safety, release hardening. |
+| CI integration | `references/ci-integration.md` | Run the automatable checks on every PR (dependency audit, secret scan, headers) + a GitHub Actions workflow template. CI is a net, not a proof. |
+| Threat model | `references/threat-model.md` | STRIDE threat-model template — run before the audit, so the audit checks the right things. |
+| Incident response | `references/incident-response.md` | The 6-step playbook for when something goes wrong (detect → contain → eradicate → recover → notify → learn) + key-leak and data-exposure steps. |
+| Compliance mapping | `references/compliance-mapping.md` | 85 checks mapped to GDPR, DPDP (India), SOC 2, and PCI-DSS. Shows coverage, not certification. |
 
 No section skipped. If a whole area does not apply (e.g. no payments), verify by searching the code first, then mark it N/A with the evidence of that search.
 
