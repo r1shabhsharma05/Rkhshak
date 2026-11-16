@@ -1,6 +1,6 @@
 ---
 name: design-unslop
-description: Design a screen or app so it never looks vibe-coded, or transform a vibe-coded app into a massive, designed one. Use when the user asks to design, build, redesign, unslop, de-slop, or polish a UI, or when a screen looks AI-generated, generic, or templated. Combines the unslop passes (subtract first, 9 passes in order), Hallmark themes and floor, art direction, Awwwards quality bar, lib-first components, and modern web platform patterns. Two modes: build new (never vibe-coded) and transform existing (full unslop). Works with Claude, Codex, and any agent that reads SKILL.md.
+description: "Design a screen or app so it never looks vibe-coded, or transform a vibe-coded app into a massive, designed one. Use when the user asks to design, build, redesign, unslop, de-slop, or polish a UI, or when a screen looks AI-generated, generic, or templated. Combines the unslop passes (subtract first, 9 passes in order), Hallmark themes and floor, art direction, Awwwards quality bar, lib-first components, and modern web platform patterns. Two modes - build new (never vibe-coded) and transform existing (full unslop). Works with Claude, Codex, and any agent that reads SKILL.md."
 ---
 
 # Design Unslop — Master Design Skill (Rkhshak)
