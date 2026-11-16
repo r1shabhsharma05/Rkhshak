@@ -38,6 +38,15 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `templates.md` | Deal-3 themes, shapes, site effects, Awwwards quality bar |
 | `component-libraries.md` | Lib-first guide — shadcn, kokonutui, astryx, 21st.dev, GSAP, Lenis |
 | `modern-web.md` | Platform patterns first — modern web guidance, mandatory-first |
+| `design-gate.md` | The ship gate — PASS/FAIL, severity + fix mapping, report format |
+| `responsive-checklist.md` | Every breakpoint, touch targets, safe areas |
+| `accessibility-checklist.md` | Contrast, keyboard, screen reader, color-blind, motion |
+| `content-states.md` | Loading / error / empty / success for every component |
+| `performance-budget.md` | LCP/INP/CLS targets, fonts, images, 60fps |
+| `screen-templates.md` | Login, dashboard, settings, pricing, checkout, onboarding |
+| `dark-mode.md` | Dark mode rules — surfaces, color, text |
+| `design-system-lock.md` | The design.md template — lock the system so pages don't drift |
+| `design-regression.md` | Before/after + compare runs — new, fixed, regressed, still open |
 
 ## Principles
 - **Complete, not partial.** Every check runs. N/A only with evidence the mechanism doesn't exist.
