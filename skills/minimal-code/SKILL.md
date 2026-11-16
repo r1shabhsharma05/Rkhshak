@@ -29,6 +29,18 @@ Works with Claude, Codex, and any agent that reads SKILL.md. The rules are writt
 4. **Write the smallest complete change.** One job, one place, no speculation. If the task doesn't ask for it, don't build it. Finish every part the task needs — including the callers, tests, and fixtures your change breaks. A shortcut with a known limit gets a `shortcut: <the limit>, <when to upgrade>` comment.
 5. **Shrink what you wrote.** Re-read the change. Remove the duplicate, the wrapper, the one-use helper, the defensive check that can't happen. If a line doesn't earn its place, delete it.
 6. **Verify.** Run the checks in `references/measure.md`: tests pass, no dead code, the diff is as small as it can be. Report the diff size (lines added vs lines removed). End with one or two lines: what you skipped or did not check, and any risk the user must know.
+7. **Judge abstractions.** Before abstracting, run `references/abstraction-judgment.md` (AHA): rule of three, same reason to change, clear name, no flag-soup. If the abstraction isn't earned yet, leave the duplication.
+8. **YAGNI.** Before adding anything, run `references/yagni.md`: is there a requirement, a user, or a test that needs this today? If not, don't build it. No config for one value, no future-proof frameworks, no dead code kept "in case".
+
+## References
+| File | What it covers |
+|---|---|
+| `references/delete-first.md` | What to delete (dead code, commented code, speculation, one-use wrappers) + how to delete safely |
+| `references/smallest-change.md` | The smallest complete change — one sentence, library first, when minimal is wrong |
+| `references/measure.md` | Prove it — diff size, files touched, new concepts, dead code, pre-ship checks |
+| `references/ponytail.md` | The ponytail method merged — decision ladder, shortcut comments, never-cut list, levels, review/audit/debt modes |
+| `references/abstraction-judgment.md` | AHA — when NOT to abstract: rule of three, same reason to change, clear name, no flag-soup |
+| `references/yagni.md` | You Aren't Gonna Need It — build only what today needs: no speculative features, no config for one value, no dead code |
 
 ## Levels
 | Level | Behavior |
