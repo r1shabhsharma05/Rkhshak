@@ -20,18 +20,22 @@ Fix a security finding with the LEAST code possible. No unnecessary code, no rew
 ## Workflow
 1. **Read the finding.** Read the audit finding + its evidence (file:line, live probe output, severity). Do not re-audit — the finding is already established.
 2. **Graph first.** Build or read the project graph (graphify) to locate the exact code. Never read the whole codebase — read only the specific files the graph points to.
-3. **Smallest complete change.** Fix the root cause with the minimum code that fully closes the issue. One finding = one focused change. Do not refactor, do not add features, do not touch unrelated code. Use the known-good pattern for the vulnerability class (`references/fix-patterns.md`) — copy the pattern, adapt only the names. If no pattern fits, say so; don't invent one.
+3. **Smallest complete change.** Fix the root cause with the minimum code that fully closes the issue. One finding = one focused change. Do not refactor, do not add features, do not touch unrelated code. Use the known-good pattern for the vulnerability class (`references/fix-patterns.md`) — copy the pattern, adapt only the names. If no pattern fits, say so; don't invent one. A vulnerable dependency goes through `references/dependency-fix.md` (upgrade, patch, fork, or replace, in that order).
 4. **Server-side, always.** Enforce every rule on the server, never only in the UI. Hiding a button is not a fix.
 5. **Test the fix.** Run the check that failed, with fresh evidence (test output or live probe). A fix is not done until the check passes on evidence. Follow `references/verify-rollback.md`: re-run the failing check, write a regression test, get independent verification, and plan the rollback before pushing.
 6. **Re-test the app.** After the fix, re-test login, the app's main feature, and payment (if any). Report the result. A fix that breaks the app is not a fix.
 7. **Update the graph.** After the change, update the project graph so it stays current for next time.
 8. **Report.** One line per fix: what was wrong, what changed (file:line), evidence it now passes. Hand the report to the Verifier (see `security-audit` roles) — do not declare your own fix "verified".
+9. **Leaked secret or live vulnerability.** A leaked secret follows `references/secret-rotation.md` (rotate first, purge last). A vulnerability live in production follows `references/hotfix-process.md` (triage, contain, smallest fix, verify on live, disclose).
 
 ## References
 | File | What it is |
 |---|---|
 | `references/fix-patterns.md` | Secure code patterns per vulnerability class — SQLi, XSS, CSRF, IDOR, auth, SSRF, path traversal, XXE, deserialization, secrets, rate limiting. Copy the pattern, adapt only the names. |
 | `references/verify-rollback.md` | Prove the fix (re-run the failing check, regression test, independent verification, live check) + plan the rollback before pushing. |
+| `references/secret-rotation.md` | A leaked secret, step by step in order — rotate first, remove second, purge last, verify, record. |
+| `references/hotfix-process.md` | Emergency fix for a live vulnerability — triage, contain, smallest fix, test, deploy + verify on live, disclose. |
+| `references/dependency-fix.md` | A vulnerable dependency — upgrade, patch, fork, or replace, in that order, with the record for each. |
 
 ## Fix rules (never break)
 - **Least code.** The smallest change that fixes the root cause. If a one-line server-side check closes it, that is the fix. No extra helpers, no new abstractions, no "while I'm here" changes.
