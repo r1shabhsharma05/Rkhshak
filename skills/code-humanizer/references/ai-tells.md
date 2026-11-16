@@ -38,7 +38,7 @@ def calculate_total(items):
 
 ## 4. Over-abstraction
 A factory for one implementation. An interface with one implementer. A config object with one entry. A helper function used once for a one-liner. A `BaseService` with one subclass.
-**Fix:** inline it. Abstraction earns its place only when there are two real uses. One use = inline.
+**Fix:** inline it. Abstraction earns its place only when there are two real uses. One use = inline. Renaming the helper is not a fix — the layer must disappear, not get a better name. If the one-use layer is exported, keep the export name but point it at the inlined implementation (re-export the surviving function); never rename or delete the export, and never break callers.
 
 ## 5. Defensive code everywhere
 ```js
