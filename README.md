@@ -63,6 +63,10 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `handoff.md` | Figma/dev handoff specs — measurements, assets, states, behavior |
 | `user-testing.md` | Test with real people — 5-second test, task test |
 | `21st-dev-prompts.md` | 21st.dev prompt library — ready-made searches + inspiration briefs |
+| `ux-patterns.md` | 20 UX patterns every SaaS needs — the design rule for each |
+| `vibe-code-fixes.md` | 20 things to fix on a vibe-coded website — a launch gate |
+| `backgrounds.md` | 22 background techniques to make designs less flat |
+| `animation-techniques.md` | 20 animation techniques with concrete values |
 
 ## References inside code-humanizer
 
