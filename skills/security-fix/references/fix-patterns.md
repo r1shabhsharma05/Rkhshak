@@ -29,9 +29,22 @@ If the query must be dynamic (a column name, a sort order), validate it against 
 - Passwords hashed with bcrypt, argon2, or scrypt (never MD5/SHA1/plain). Salted per user, cost factor set so a hash takes ~100ms+.
 - Login rate-limited server-side. Lockout or progressive delay after repeated failures. No user enumeration (same response for "wrong password" and "no such user").
 
-### SSRF → allowlist + no internal metadata
-- Outbound requests from user-supplied URLs go through an allowlist of hosts/schemes. Block private IP ranges (10/8, 172.16/12, 192.168/16, 169.254/16 — the cloud metadata address lives there).
-- Follow redirects only to allowlisted hosts. Set a timeout.
+### SSRF → one guard, reused for every outbound fetch
+- All outbound requests from user-supplied URLs go through ONE guard function (`fetchSafe(url)`). Copy the shape below, adapt only the names. Never hand-roll a second validator per route.
+- The guard checks, in order: (1) scheme is http or https only; (2) resolve the host with DNS and reject private, loopback, link-local, or reserved IPs — 10/8, 172.16/12, 192.168/16, 127/8, 169.254/16 (the cloud metadata address lives there), 0.0.0.0/8, ::1, fc00::/7, fe80::/10; (3) follow redirects only by re-running the same guard on the new URL (max 3); (4) timeout (5s) and cap the response size (1 MB — abort past it).
+```
+// ONE guard — copy this shape, adapt only the names.
+// isPrivate() is one small check over the ranges in the bullet above.
+async function fetchSafe(url, { maxRedirects = 3, timeoutMs = 5000, maxBytes = 1_000_000 } = {}) {
+  const u = new URL(url);
+  if (u.protocol !== 'http:' && u.protocol !== 'https:') throw new Error('bad scheme');
+  const addrs = await dns.lookup(u.hostname, { all: true });
+  if (addrs.some(a => isPrivate(a.address))) throw new Error('blocked host');
+  // fetch with redirect: 'manual'; on each Location header, re-run fetchSafe (maxRedirects).
+  // AbortSignal.timeout(timeoutMs); abort the body stream once it passes maxBytes.
+}
+```
+- Residual risk — DNS rebinding (TOCTOU): the IP resolved at check time can differ from the IP the fetch connects to. Mitigate by resolving once and connecting to the resolved IP, or record the residual risk in the report. Do not silently ignore it.
 
 ### Path traversal → canonicalize + allowlist
 - Resolve the user-supplied path to its canonical form, then check it stays inside the allowed directory. Reject `..`, absolute paths, and symlinks that escape.
