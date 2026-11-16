@@ -100,6 +100,10 @@ Delete motion by default: looping pulses on things that aren't live, shimmer on 
 | `references/handoff.md` | Figma/dev handoff specs — measurements, assets, states, behavior, edge cases. |
 | `references/user-testing.md` | Test with real people — 5-second test, task test, 5 people is enough. |
 | `references/21st-dev-prompts.md` | 21st.dev prompt library — ready-made searches + inspiration briefs for proven components. Search before hand-building. |
+| `references/ux-patterns.md` | 20 UX patterns every SaaS needs — the design rule for each (optimistic UI, skeletons, command palette, empty states, and more). |
+| `references/vibe-code-fixes.md` | 20 things to fix on a vibe-coded website — a launch gate: no horizontal scroll, no broken links/buttons, no placeholder text, favicon, titles, meta, mobile. |
+| `references/backgrounds.md` | 22 background techniques to make designs less flat — felt, fluted glass, halftone, grain, contour lines, and more. One per screen, from the world. |
+| `references/animation-techniques.md` | 20 animation techniques with concrete values — ease-out entrances, 30ms stagger, 0.97 press, arcs, rubber band, layoutId. Extends the motion system. |
 
 ## Awwwards bar (the acceptance bar, never an award claim)
 A cohesive, memorable site whose visual idea, media, typography, and motion tell the same story. First viewport is the strongest authored moment. Original imagery, honest icons/logos (real company marks only, never fake proof), photo avatars (never initials or generated people as real customers), complete semantic page (nav, sections, CTA, footer, form states, keyboard focus), performance (lazy loading, bounded transforms, no continuously animated offscreen content). Reject generic gradient blobs, ornamental bento grids, glass applied everywhere, stock component layouts, fake testimonials, and motion with no narrative role. Never describe the result as award-winning unless the user provides verifiable evidence. Full bar in `references/templates.md`.
