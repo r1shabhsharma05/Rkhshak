@@ -78,7 +78,7 @@
 ### Area 2 — Login and sessions (7 checks)
 
 - **2.1 Every private route verifies the session on the server.** Each route/server action that touches private data checks the session or token on the server, including managed-auth sessions. Hiding a button in the UI is not protection. List every private route in AUDIT.md.
-- **2.2 Passwords are handled safely.** Prefer a managed provider. If the app stores passwords itself, they're hashed with bcrypt or argon2, never plain text or reversible encryption. No admin or test account is created at startup with a password written in the code or a default password. If one exists, mark it Critical.
+- **2.2 Passwords are handled safely.** Prefer a managed provider. If the app stores passwords itself, they're hashed with bcrypt or argon2, never plain text or reversible encryption. Signup enforces a password policy on the server: minimum length of at least 8 characters, and a blocklist of common and breached passwords. Test it live: a 1-character password must be rejected. No admin or test account is created at startup with a password written in the code or a default password. If one exists, mark it Critical.
 - **2.3 Password reset and email verification are safe.** Reset links expire, work once and can't be guessed. Responses don't reveal whether an email is registered.
 - **2.4 Login is protected from guessing.** Rate limits or lockouts on login, signup, OTP and password reset (see 6.1 for how).
 - **2.5 Tokens are verified and expire.** Tokens are verified with their signature (never just decoded), the `none` algorithm is rejected, no default or example secret is used, sessions expire and logout ends them. Session cookies are HttpOnly, Secure and SameSite.
