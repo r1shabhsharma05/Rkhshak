@@ -11,6 +11,8 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `security-audit` | Master production-readiness security audit. 85 checks + OWASP Top 10 (web + LLM), multi-agent roles (Auditor / Fixer / Verifier), live probing, evidence standard, deploy gate. | ✅ Ready |
 | `security-fix` | Fix security findings with the least code possible. Minimal, complete changes. | ✅ Ready |
 | `design-unslop` | Master design skill. Build a screen/app so it never looks vibe-coded, or transform a vibe-coded app into a massive design. Unslop passes, Hallmark themes + floor, art direction, Awwwards bar, lib-first components. | ✅ Ready |
+| `code-humanizer` | Write code that reads like a human wrote it. Remove AI tells (verbose comments, generic names, over-abstraction), use human style, rewrite AI code to pass review. | ✅ Ready |
+| `minimal-code` | Write the least code that solves the problem. Delete first, use the library, no dead code, no speculation. Smallest complete change. | ✅ Ready |
 
 ## How to use
 1. Copy `skills/security-audit/` into your agent's skills folder (or read `skills/security-audit/SKILL.md` directly).
@@ -61,6 +63,24 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `handoff.md` | Figma/dev handoff specs — measurements, assets, states, behavior |
 | `user-testing.md` | Test with real people — 5-second test, task test |
 | `21st-dev-prompts.md` | 21st.dev prompt library — ready-made searches + inspiration briefs |
+
+## References inside code-humanizer
+
+| File | What it covers |
+|---|---|
+| `ai-tells.md` | The 12 giveaways that code was AI-written, each with a fix + a pre-ship checklist |
+| `human-style.md` | How humans actually write code — comments (WHY not WHAT), naming, structure, errors |
+| `humanize-existing.md` | Rewrite AI code to read human — strip, rename, inline, match neighbours, before/after |
+| `prose-tells.md` | The 26 AI writing patterns from blader/humanizer (MIT) — for comments, docs, commit messages, READMEs, error messages, UI copy |
+
+## References inside minimal-code
+
+| File | What it covers |
+|---|---|
+| `delete-first.md` | What to delete (dead code, commented code, speculation, one-use wrappers) + how to delete safely |
+| `smallest-change.md` | The smallest complete change — one sentence, library first, when minimal is wrong |
+| `measure.md` | Prove it — diff size, files touched, new concepts, dead code, pre-ship checks |
+| `ponytail.md` | The ponytail method merged — decision ladder, shortcut comments, never-cut list, levels, review/audit/debt modes |
 
 ## Principles
 - **Complete, not partial.** Every check runs. N/A only with evidence the mechanism doesn't exist.
