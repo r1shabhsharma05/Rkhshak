@@ -29,6 +29,20 @@ Works with Claude, Codex, and any agent that reads SKILL.md. The rules are writt
 5. **Write in human style.** Follow `references/human-style.md`: comments explain WHY (only where the why isn't obvious), names are domain-specific, small pragmatic trade-offs are fine, the code has a point of view.
 6. **Read it aloud.** Read the code as if explaining it to a colleague. If it sounds like documentation, rewrite it. If a sentence in a comment sounds like a tutorial, delete it.
 6. **Verify.** The check is simple: would a senior developer accept this in review without asking whether AI wrote it? If the answer is no, find the tell and remove it. Never fake human mistakes (typos, bugs, sloppy formatting) — humans write good code, and faking errors is dishonest.
+7. **Name things human.** Run every name against `references/naming-guide.md`: domain language, booleans as questions, verbs for functions, no generic names (`data`, `result`, `temp`) in a real scope.
+8. **Refactor for readability.** If the code works but reads like a generator wrote it, restructure it with `references/refactor-readability.md`: extract intent-named functions, flatten nesting with early returns, delete dead code, replace magic numbers.
+9. **Docs voice.** READMEs and docs go through `references/readme-docs-voice.md`: what/why/how, real commands that work, no marketing fluff, honest limitations, stranger test (install + run in under 10 minutes from the README alone).
+
+## References
+| File | What it covers |
+|---|---|
+| `references/ai-tells.md` | The 12 giveaways that code was AI-written, each with a fix + a pre-ship checklist |
+| `references/human-style.md` | How humans actually write code — comments (WHY not WHAT), naming, structure, errors |
+| `references/humanize-existing.md` | Rewrite AI code to read human — strip, rename, inline, match neighbours, before/after |
+| `references/prose-tells.md` | The 26 AI writing patterns from blader/humanizer (MIT) — for comments, docs, commit messages, READMEs, error messages, UI copy |
+| `references/naming-guide.md` | Human names — domain language, booleans as questions, verbs for functions, no generic names |
+| `references/refactor-readability.md` | Restructure AI code so it reads human — extract, flatten, delete dead code, name the magic numbers |
+| `references/readme-docs-voice.md` | Docs that sound like a person — what/why/how, real commands, no fluff, honest limits, stranger test |
 
 ## Rules
 - **Never fake mistakes.** No deliberate typos, no fake bugs, no sloppy formatting to "look human". Human code is good code. The skill removes AI tells, it does not add human flaws.
