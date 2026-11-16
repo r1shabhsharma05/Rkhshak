@@ -108,6 +108,10 @@ Delete motion by default: looping pulses on things that aren't live, shimmer on 
 | `references/wcag-checklist.md` | WCAG 2.2 concrete criteria — contrast ratios, keyboard, alt text, touch targets, reduced motion — with a 5-step test method. |
 | `references/iconography.md` | A consistent icon system — one set, one stroke, 24px grid, labels for actions, no emoji as icons. |
 | `references/design-self-review.md` | Critique your own work before shipping — 5-second test, squint test, every state, phone test, read copy aloud, remove one element. |
+| `references/form-design.md` | Forms that users finish — labels always visible, inline validation, honest submit button, multi-step with progress. |
+| `references/layout-grid.md` | Grid systems, spacing scale, composition — 12-col desktop / 4-col mobile, one gutter, one dominant thing. |
+| `references/design-tokens.md` | The design system as code — semantic color, spacing/type/radius/shadow scales, no raw values in components. |
+| `references/mobile-app-design.md` | Native mobile patterns — bottom tabs, thumb zone, gestures with visible alternatives, offline states, platform honesty. |
 
 ## Awwwards bar (the acceptance bar, never an award claim)
 A cohesive, memorable site whose visual idea, media, typography, and motion tell the same story. First viewport is the strongest authored moment. Original imagery, honest icons/logos (real company marks only, never fake proof), photo avatars (never initials or generated people as real customers), complete semantic page (nav, sections, CTA, footer, form states, keyboard focus), performance (lazy loading, bounded transforms, no continuously animated offscreen content). Reject generic gradient blobs, ornamental bento grids, glass applied everywhere, stock component layouts, fake testimonials, and motion with no narrative role. Never describe the result as award-winning unless the user provides verifiable evidence. Full bar in `references/templates.md`.
