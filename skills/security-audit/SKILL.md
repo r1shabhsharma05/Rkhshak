@@ -1,7 +1,16 @@
+---
+name: security-audit
+description: Complete production-readiness security audit for any project. Use when the user asks to audit, security-check, or verify production readiness, or before any production deploy or launch. Runs the 85-check audit + OWASP Top 10, multi-agent roles (Auditor/Fixer/Verifier), live probing, evidence standard, and a deploy gate. Also covers launch readiness and UX patterns as separate gates.
+---
+
 # Security Audit — Master Skill (Rkhshak)
 
+**Purpose:** any user, any project, any agent (Claude, Codex, or any agent that reads SKILL.md). The agent reads this skill, runs it on the user's project, finds every security loophole, fixes them all, and gets the project production-ready. Nothing partial — complete fix, till production.
+
+**How a user runs it:** tell your agent "audit my project with Rkhshak security-audit" (and "fix what you find" when ready). The agent follows the workflow below. No security expertise needed from the user — the skill carries the checks, the method, and the gate.
+
 Complete production-readiness security audit. One skill, all checks, nothing partial.
-Combines the 85-check pre-launch audit, OWASP Top 10 (2025 + LLM), and hardening checklists into a single gate.
+Combines the 85-check pre-launch audit, OWASP Top 10 (2025 + LLM), and hardening checklists into a single gate. Works on any stack — web, mobile, API, or full-stack (map the checks to your stack with the stack-mapping table in `references/pre-launch-audit-85-rules.md`).
 
 ## When to use
 - Before any production deploy / launch.
@@ -24,12 +33,13 @@ One agent per role. If only one agent is available, it audits only and reports �
 ## Workflow
 1. **Graph first.** Build the project graph (graphify) before reading code. Consult the graph to understand the app. Never read the whole codebase — read only the specific files the graph points to.
 2. **Scope.** Confirm the target: repo, live URL, stack, what is in scope (auth, payments, AI, mobile). If a check's mechanism genuinely does not exist in this stack, mark it N/A explicitly with the reason — never silently drop it.
-3. **Audit.** Run EVERY check in `references/pre-launch-audit-85-rules.md` (Areas 1–13, 67 code checks + H1–H18 human checks) plus `references/owasp-top-10.md`, `references/secureguard-hardening-checklist.md`, and `references/vibe-code-security-checklist.md`. For a full/deep review, also follow the Cloudflare 6-phase workflow in `references/cloudflare-audit.md`. Run `references/launch-readiness-checklist.md` and `references/ux-patterns-checklist.md` as separate, non-security passes (see below). List every route, collection, and file checked in AUDIT.md so a PASS can be trusted.
+3. **Audit.** Run EVERY check in `references/pre-launch-audit-85-rules.md` (Areas 1–13, 67 code checks + H1–H18 human checks) plus `references/owasp-top-10.md` and `references/vibe-code-security-checklist.md`. For a full/deep review, also follow the Cloudflare 6-phase workflow in `references/cloudflare-audit.md`. Run `references/launch-readiness-checklist.md` and `references/ux-patterns-checklist.md` as separate, non-security passes (see below). List every route, collection, and file checked in AUDIT.md so a PASS can be trusted.
 4. **Live probe.** Do not trust code alone. Probe the LIVE app: login flow, session handling, rate limits, CORS, bot protection, error messages. A check passes only on observed behaviour, not on code that "looks right".
 5. **Report.** Write AUDIT.md in the format in `references/audit-gate.md`. Verdict, counts, open issues (Critical first), user to-do list, "do this on your live app" steps.
 6. **Fix round (only on user approval).** Fixer fixes approved findings, smallest complete change each (see Fix rules). After each fix, the Verifier re-runs that check with fresh evidence.
-7. **Gate.** Re-run the full audit. Deploy is blocked until the gate passes (see `references/audit-gate.md`).
-8. **Update the graph.** After changes, update the project graph so it stays current for next time.
+7. **Gate.** Re-run the full audit. Deploy is blocked until the gate passes (see `references/audit-gate.md`). Every finding carries a severity + fix route (see audit-gate.md "Severity + fix mapping").
+8. **Regression track.** Compare this run against the previous run (see `references/regression-tracking.md`). Report the delta first: new, fixed, regressed, still open. A regression is Critical-priority.
+9. **Update the graph.** After changes, update the project graph so it stays current for next time.
 
 ## Evidence standard
 - Never report a finding without evidence. Label each **Confirmed** (seen in code or behaviour) or **Suspected** (likely, needs a test or user confirmation).
@@ -42,11 +52,11 @@ One agent per role. If only one agent is available, it audits only and reports �
 |---|---|---|
 | Pre-launch audit, 85 checks | `references/pre-launch-audit-85-rules.md` | Secrets, login/sessions, access control, DB/storage, input/output, API abuse, payments, AI, dependencies, deployment, cost, privacy, mobile, H1–H18 human checks |
 | OWASP Top 10 2025 + LLM Top 10 2025 | `references/owasp-top-10.md` | The 10 most critical web risks + the 10 most critical LLM-app risks, mapped to the 85 checks |
-| Hardening checklist | `references/secureguard-hardening-checklist.md` | 46-item hardening checklist (SecureGaurd Day 3, verified live). Its verdicts are SecureGaurd's example — re-verify every item for the target app, never copy a checkmark. |
 | Vibe-code security checklists | `references/vibe-code-security-checklist.md` | Two viral "vibe-coded app" security checklists (18 + 19 items), merged and mapped to the 85 checks. |
 | Cloudflare 6-phase audit | `references/cloudflare-audit.md` | Deep-audit method: reconnaissance, hunting waves, candidate validation, structured output, independent verification, report. Use for full/comprehensive reviews. |
 | Launch readiness | `references/launch-readiness-checklist.md` | Pre-launch checks (privacy, terms, cookies, SEO, performance, accessibility, legal), merged from four viral lists. Separate gate — not security. |
 | UX patterns | `references/ux-patterns-checklist.md` | 20 SaaS UX patterns. Separate gate — not security. |
+| Regression tracking | `references/regression-tracking.md` | Compare each run against the previous one — new, fixed, regressed, still open. |
 
 No section skipped. If a whole area does not apply (e.g. no payments), verify by searching the code first, then mark it N/A with the evidence of that search.
 
