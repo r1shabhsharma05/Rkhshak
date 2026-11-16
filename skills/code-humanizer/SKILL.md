@@ -25,8 +25,9 @@ Works with Claude, Codex, and any agent that reads SKILL.md. The rules are writt
 1. **Read the code (or the task).** If rewriting existing code, read it first. If writing new code, understand the task and the codebase's existing style.
 2. **Match the codebase.** Human code fits its neighbours. Read the files around the change — match their naming, their comment density, their structure. A human writing in an existing codebase copies the local style, not a textbook.
 3. **Check the tells.** Run every line against `references/ai-tells.md`. Remove every tell: verbose comments, generic names, over-abstraction, defensive bloat, perfect structure.
-4. **Write in human style.** Follow `references/human-style.md`: comments explain WHY (only where the why isn't obvious), names are domain-specific, small pragmatic trade-offs are fine, the code has a point of view.
-5. **Read it aloud.** Read the code as if explaining it to a colleague. If it sounds like documentation, rewrite it. If a sentence in a comment sounds like a tutorial, delete it.
+4. **Check the prose.** Code has prose in it — comments, docs, commit messages, READMEs, error messages, UI copy. Run all of it against the 26 patterns in `references/prose-tells.md` (from blader/humanizer, MIT): not-X-but-Y, one-line closers, staged run-ups, forced triads, inflated claims, sales language, stock AI words, chatbot residue. Mark the tells strongest first, draft the rewrite keeping every claim, check the draft, then write the final version. If the user gives a writing sample, match its voice — the sample overrides the patterns.
+5. **Write in human style.** Follow `references/human-style.md`: comments explain WHY (only where the why isn't obvious), names are domain-specific, small pragmatic trade-offs are fine, the code has a point of view.
+6. **Read it aloud.** Read the code as if explaining it to a colleague. If it sounds like documentation, rewrite it. If a sentence in a comment sounds like a tutorial, delete it.
 6. **Verify.** The check is simple: would a senior developer accept this in review without asking whether AI wrote it? If the answer is no, find the tell and remove it. Never fake human mistakes (typos, bugs, sloppy formatting) — humans write good code, and faking errors is dishonest.
 
 ## Rules
