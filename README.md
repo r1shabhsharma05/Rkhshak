@@ -36,6 +36,16 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `threat-model.md` | STRIDE threat-model template — run before the audit |
 | `incident-response.md` | 6-step incident playbook + key-leak and data-exposure steps |
 | `compliance-mapping.md` | 85 checks mapped to GDPR, DPDP, SOC 2, PCI-DSS |
+| `ai-agent-security.md` | Securing the agent itself — prompt injection, tool abuse, least privilege, approval gates |
+| `supply-chain-sbom.md` | Dependency audit, lockfile discipline, SBOM (CycloneDX/SPDX), provenance |
+| `mastg-mobile-testing.md` | OWASP MASTG mobile testing — MASVS categories, static + dynamic + manual |
+| `cloud-misconfig.md` | Cloud console settings — public buckets, IAM, secrets, encryption, logging, backups |
+
+## References inside security-fix
+| File | What it is |
+|---|---|
+| `fix-patterns.md` | Secure code patterns per vulnerability class — SQLi, XSS, CSRF, IDOR, auth, SSRF, path traversal, XXE, deserialization, secrets, rate limiting |
+| `verify-rollback.md` | Prove the fix (re-run the check, regression test, independent verification, live check) + plan the rollback before pushing |
 
 ## References inside design-unslop
 | File | What it is |
@@ -67,6 +77,10 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `vibe-code-fixes.md` | 20 things to fix on a vibe-coded website — a launch gate |
 | `backgrounds.md` | 22 background techniques to make designs less flat |
 | `animation-techniques.md` | 20 animation techniques with concrete values |
+| `landing-page-design.md` | Landing page structure — hero, social proof, benefits, pricing, FAQ, one action per screen |
+| `wcag-checklist.md` | WCAG 2.2 concrete criteria — contrast, keyboard, alt text, touch targets, reduced motion |
+| `iconography.md` | A consistent icon system — one set, one stroke, 24px grid, no emoji as icons |
+| `design-self-review.md` | Critique your own work before shipping — 5-second test, squint test, every state, phone test |
 
 ## References inside code-humanizer
 
@@ -76,6 +90,9 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `human-style.md` | How humans actually write code — comments (WHY not WHAT), naming, structure, errors |
 | `humanize-existing.md` | Rewrite AI code to read human — strip, rename, inline, match neighbours, before/after |
 | `prose-tells.md` | The 26 AI writing patterns from blader/humanizer (MIT) — for comments, docs, commit messages, READMEs, error messages, UI copy |
+| `naming-guide.md` | Human names — domain language, booleans as questions, verbs for functions, no generic names |
+| `refactor-readability.md` | Restructure AI code so it reads human — extract, flatten, delete dead code, name the magic numbers |
+| `readme-docs-voice.md` | Docs that sound like a person — what/why/how, real commands, no fluff, honest limits, stranger test |
 
 ## References inside minimal-code
 
@@ -85,6 +102,8 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `smallest-change.md` | The smallest complete change — one sentence, library first, when minimal is wrong |
 | `measure.md` | Prove it — diff size, files touched, new concepts, dead code, pre-ship checks |
 | `ponytail.md` | The ponytail method merged — decision ladder, shortcut comments, never-cut list, levels, review/audit/debt modes |
+| `abstraction-judgment.md` | AHA — when NOT to abstract: rule of three, same reason to change, clear name, no flag-soup |
+| `yagni.md` | You Aren't Gonna Need It — build only what today needs: no speculative features, no config for one value, no dead code |
 
 ## Principles
 - **Complete, not partial.** Every check runs. N/A only with evidence the mechanism doesn't exist.
