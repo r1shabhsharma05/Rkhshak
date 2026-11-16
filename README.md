@@ -2,6 +2,8 @@
 
 One repo, complete security skills. Nothing partial — every check, every step, verified with evidence before production.
 
+**Works with any agent:** Claude, Codex, and any agent that reads SKILL.md. Each skill is a standard `SKILL.md` (name + description frontmatter) plus `references/`. See `AGENTS.md` for agent instructions.
+
 ## Skills
 
 | Skill | What it does | Status |
@@ -19,12 +21,12 @@ One repo, complete security skills. Nothing partial — every check, every step,
 |---|---|
 | `pre-launch-audit-85-rules.md` | The 85-check pre-launch audit (core) |
 | `owasp-top-10.md` | OWASP Top 10 (web + LLM), mapped to the 85 checks |
-| `secureguard-hardening-checklist.md` | 46-item hardening checklist (SecureGaurd Day 3, verified live) |
 | `vibe-code-security-checklist.md` | Two viral vibe-code security checklists, merged + mapped |
 | `cloudflare-audit.md` | Cloudflare 6-phase deep-audit workflow (summary) |
 | `launch-readiness-checklist.md` | Pre-launch checks (SEO, performance, accessibility, legal) — separate gate |
 | `ux-patterns-checklist.md` | 20 SaaS UX patterns — separate gate |
-| `audit-gate.md` | The deploy gate + report format |
+| `regression-tracking.md` | Compare runs over time — new, fixed, regressed, still open |
+| `audit-gate.md` | The deploy gate + severity/fix mapping + report format |
 
 ## Principles
 - **Complete, not partial.** Every check runs. N/A only with evidence the mechanism doesn't exist.
@@ -35,4 +37,4 @@ One repo, complete security skills. Nothing partial — every check, every step,
 - **Graph first.** Build the project graph before reading code; update it after changes. Never read the whole codebase.
 
 ## Provenance
-Built from battle-tested audits: the 85-check pre-launch audit (Mayank Shah v2.0) that took SafeLife from 27/85 to 61/85, OWASP Top 10 (2025 + LLM), and hardening checklists verified live on production apps.
+Built from the 85-check pre-launch audit (Mayank Shah v2.0), OWASP Top 10 (2025 + LLM), the Cloudflare 6-phase audit workflow, and viral pre-launch checklists.
