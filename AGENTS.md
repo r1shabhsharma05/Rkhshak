@@ -16,6 +16,7 @@ This repo's skills work with **any agent that reads SKILL.md** — Claude, Codex
 | `design-unslop` | `skills/design-unslop/SKILL.md` | Design a screen/app so it never looks vibe-coded, or transform a vibe-coded app into a massive design. |
 | `code-humanizer` | `skills/code-humanizer/SKILL.md` | Write code that reads like a human wrote it — remove AI tells, use human style, rewrite AI code to pass review. |
 | `minimal-code` | `skills/minimal-code/SKILL.md` | Write the least code that solves the problem — delete first, use the library, no dead code, no speculation. |
+| `skill-evolution` | `skills/skill-evolution/SKILL.md` | Improve any agent skill like training a neural network — epochs, learning rate, validation gates, nightly sleep cycles. |
 
 ## Rules that apply to every agent
 - Audit/fix only the user's own project. Never touch what the user does not own or has no authorization for.
