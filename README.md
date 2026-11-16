@@ -13,6 +13,7 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `design-unslop` | Master design skill. Build a screen/app so it never looks vibe-coded, or transform a vibe-coded app into a massive design. Unslop passes, Hallmark themes + floor, art direction, Awwwards bar, lib-first components. | ✅ Ready |
 | `code-humanizer` | Write code that reads like a human wrote it. Remove AI tells (verbose comments, generic names, over-abstraction), use human style, rewrite AI code to pass review. | ✅ Ready |
 | `minimal-code` | Write the least code that solves the problem. Delete first, use the library, no dead code, no speculation. Smallest complete change. | ✅ Ready |
+| `skill-evolution` | Train any agent skill like a neural network — epochs, learning rate, validation gates — without touching model weights. Bounded edits, gated acceptance, nightly sleep cycles. | ✅ Ready |
 
 ## How to use
 1. Copy `skills/security-audit/` into your agent's skills folder (or read `skills/security-audit/SKILL.md` directly).
@@ -122,6 +123,16 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `config-minimalism.md` | Config diet — sane defaults, no config for one value, every option has a user, config in one place |
 | `api-surface-minimalism.md` | API surface diet — fewest endpoints, fewest params, no speculative endpoints, one shape per resource |
 
+## References inside skill-evolution
+
+| File | What it covers |
+|---|---|
+| `training-loop.md` | The 6-stage loop (rollout → reflect → aggregate → select → update → evaluate) + epochs + slow/meta update |
+| `validation-gate.md` | Held-out gate — strict improvement only, rejected-edit buffer, no-regression mode, split-leakage rules |
+| `edit-budget.md` | Textual learning rate (max edits), bounded add/delete/replace, LR schedule, slow/meta update |
+| `skillopt-sleep.md` | Nightly offline self-evolution — harvest → mine → replay → consolidate → stage → adopt (human) |
+| `skill-transfer.md` | What survives a move (models, harnesses, benchmarks) + honest scope + A/B evalkit (McNemar + bootstrap CI) |
+
 ## Principles
 - **Complete, not partial.** Every check runs. N/A only with evidence the mechanism doesn't exist.
 - **Evidence, not claims.** A check passes only on observed behaviour (live probe or test output).
@@ -131,4 +142,4 @@ One repo, complete security skills. Nothing partial — every check, every step,
 - **Graph first.** Build the project graph before reading code; update it after changes. Never read the whole codebase.
 
 ## Provenance
-Built from the 85-check pre-launch audit (Mayank Shah v2.0), OWASP Top 10 (2025 + LLM), the Cloudflare 6-phase audit workflow, and viral pre-launch checklists.
+Built from the 85-check pre-launch audit (Mayank Shah v2.0), OWASP Top 10 (2025 + LLM), the Cloudflare 6-phase audit workflow, viral pre-launch checklists, and SkillOpt (Microsoft) for skill evolution.
