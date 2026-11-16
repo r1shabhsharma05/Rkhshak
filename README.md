@@ -10,6 +10,7 @@ One repo, complete security skills. Nothing partial — every check, every step,
 |---|---|---|
 | `security-audit` | Master production-readiness security audit. 85 checks + OWASP Top 10 (web + LLM), multi-agent roles (Auditor / Fixer / Verifier), live probing, evidence standard, deploy gate. | ✅ Ready |
 | `security-fix` | Fix security findings with the least code possible. Minimal, complete changes. | ✅ Ready |
+| `design-unslop` | Master design skill. Build a screen/app so it never looks vibe-coded, or transform a vibe-coded app into a massive design. Unslop passes, Hallmark themes + floor, art direction, Awwwards bar, lib-first components. | ✅ Ready |
 
 ## How to use
 1. Copy `skills/security-audit/` into your agent's skills folder (or read `skills/security-audit/SKILL.md` directly).
@@ -27,6 +28,16 @@ One repo, complete security skills. Nothing partial — every check, every step,
 | `ux-patterns-checklist.md` | 20 SaaS UX patterns — separate gate |
 | `regression-tracking.md` | Compare runs over time — new, fixed, regressed, still open |
 | `audit-gate.md` | The deploy gate + severity/fix mapping + report format |
+
+## References inside design-unslop
+| File | What it is |
+|---|---|
+| `vibe-code-tells.md` | The signs a screen looks AI-generated — audit checklist |
+| `design-principles.md` | The Floor (hard rules), house rules, laws of the craft |
+| `unslop-passes.md` | Subtract first + the 9 passes in order (spacing → motion) |
+| `templates.md` | Deal-3 themes, shapes, site effects, Awwwards quality bar |
+| `component-libraries.md` | Lib-first guide — shadcn, kokonutui, astryx, 21st.dev, GSAP, Lenis |
+| `modern-web.md` | Platform patterns first — modern web guidance, mandatory-first |
 
 ## Principles
 - **Complete, not partial.** Every check runs. N/A only with evidence the mechanism doesn't exist.
