@@ -20,6 +20,16 @@ This repo's skills work with **any agent that reads SKILL.md** — Claude, Codex
 | `skill-evolution` | `skills/skill-evolution/SKILL.md` | Improve any agent skill like training a neural network — epochs, learning rate, validation gates, nightly sleep cycles. |
 | `spec-kit` | `skills/spec-kit/SKILL.md` | Build a feature or project spec-first, or run the bug / idea-assessment extensions. |
 | `motion-craft` | `skills/motion-craft/SKILL.md` | Animate something, fix janky motion, audit/remove motion, or name an effect. |
+| `seo` | `skills/seo/SKILL.md` | Audit, plan, or improve search visibility — site/page audits, technical, content, schema, local, GEO, agent readiness. |
+| `instagram-craft` | `skills/instagram-craft/SKILL.md` | Plan, write, or review Instagram content — Reels, carousels, captions, Stories, profile, comments, DMs. Draft only, never auto-posts. |
+| `youtube-craft` | `skills/youtube-craft/SKILL.md` | Plan, write, package, or review a YouTube video — scripts, titles, retention, chapters, Shorts. Draft only, never publishes. |
+| `coding-craft` | `skills/coding-craft/SKILL.md` | Write, test, debug, review, or verify code — TDD, debugging, five-axis review, verification before done, APIs, docs. |
+| `ship-workflow` | `skills/ship-workflow/SKILL.md` | Take work from idea to production — plan, constrain, dispatch, execute, scope, git, CI/CD, launch, OSS PRs. |
+| `codebase-intelligence` | `skills/codebase-intelligence/SKILL.md` | Understand a codebase before touching it — graph mapping, official docs, history, corrections into rules. |
+| `job-search` | `skills/job-search/SKILL.md` | Find a role, score fit, tailor a CV, verify a submission, prep for interviews, negotiate pay, write a contract. |
+| `lead-gen` | `skills/lead-gen/SKILL.md` | Find first customers or leads from public signals; draft outreach (never send); verify contact details honestly. |
+| `video-craft` | `skills/video-craft/SKILL.md` | Direct or produce a short video — stickman, premium reels, HTML-to-video, code-to-video — analyse video, generate voiceover. |
+| `linkedin-craft` | `skills/linkedin-craft/SKILL.md` | Plan, draft, or audit LinkedIn posts, comments, replies, or profiles. Draft only — the owner posts himself. |
 
 ## Rules that apply to every agent
 - Audit/fix only the user's own project. Never touch what the user does not own or has no authorization for.

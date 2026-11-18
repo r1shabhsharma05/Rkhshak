@@ -17,6 +17,16 @@ One repo, complete skills. Nothing partial — every check, every step, verified
 | `skill-evolution` | Train any agent skill like a neural network — epochs, learning rate, validation gates — without touching model weights. Bounded edits, gated acceptance, nightly sleep cycles. | ✅ Ready |
 | `spec-kit` | Spec-driven development: specifications drive code — constitution → specify → clarify → plan → tasks → analyze → implement → converge, plus bug and idea-assessment extensions. | ✅ Ready |
 | `motion-craft` | Build, review, audit, or remove UI motion so it feels right — frequency gate, purpose, tool ladder, springs, frame-budget performance, vocabulary, native motion. | ✅ Ready |
+| `seo` | Audit, plan, or improve search visibility — site/page audits, technical, content, schema, local, GEO, agent readiness. | ✅ Ready |
+| `instagram-craft` | Plan, write, and review Instagram content — Reels, carousels, captions, Stories, profile, comments, DMs. Draft only, never auto-posts. | ✅ Ready |
+| `youtube-craft` | Plan, write, package, and review YouTube videos — scripts, titles, retention, chapters, Shorts. Draft only, never publishes. | ✅ Ready |
+| `coding-craft` | Write, test, debug, review, and verify code — TDD, debugging, five-axis review, verification before done, APIs, docs. | ✅ Ready |
+| `ship-workflow` | Take work from idea to production — plan, constrain, dispatch, execute, scope, git, CI/CD, launch, OSS PRs. | ✅ Ready |
+| `codebase-intelligence` | Understand a codebase before touching it — graph mapping, official docs, history, corrections into rules. | ✅ Ready |
+| `job-search` | Find roles, score fit honestly, tailor CV + cover letter, verify the submission landed, prep for interviews, negotiate pay, write contracts. | ✅ Ready |
+| `lead-gen` | Find evidence-backed first customers and leads from public signals, draft outreach that is never sent, verify contact details honestly. | ✅ Ready |
+| `video-craft` | Direct and produce short videos — stickman, premium reels, HTML-to-video, code-to-video, full-pipeline — analyse video, generate voiceover. | ✅ Ready |
+| `linkedin-craft` | Plan, draft, audit, and humanise LinkedIn posts, comments, replies, and profiles — DRAFT ONLY, the owner posts himself. | ✅ Ready |
 
 ## How to use
 1. Copy `skills/security-audit/` into your agent's skills folder (or read `skills/security-audit/SKILL.md` directly).
@@ -191,6 +201,145 @@ One repo, complete skills. Nothing partial — every check, every step, verified
 | `motion-audit.md` | Audit, review bar, removal |
 | `native-motion.md` | Expo/React Native motion |
 
+## References inside seo
+
+| File | What it covers |
+|---|---|
+| `references/audit-and-scoring.md` | Full-site and single-page audit process, the 0–100 score weights, priority definitions, report structure, error handling |
+| `references/technical.md` | Crawlability, indexability, security flags, URLs, mobile parity, Core Web Vitals, rendering, IndexNow, JS SEO traps |
+| `references/content-and-eeat.md` | Who/How/Why, E-E-A-T, content metrics, AI-content assessment, draft cleanup, citation readiness, freshness |
+| `references/content-briefs-and-clusters.md` | Content briefs, SERP-overlap clustering, hub-and-spoke, intent, internal-link matrix |
+| `references/schema-and-sitemap.md` | Schema type status (active / retired / deprecated), JSON-LD generation, sitemap rules and limits |
+| `references/images.md` | Image optimisation (alt, size, format, responsive, lazy, CLS) and generated SEO image assets |
+| `references/backlinks.md` | Backlink profile, anchor distribution, toxic links, competitor gap, free data sources |
+| `references/local-and-maps.md` | Local SEO (GBP, reviews, NAP, citations, local schema) and Maps intelligence (geo-grid, radius, review signals) |
+| `references/international.md` | Hreflang validation, generation, implementation methods, common mistakes |
+| `references/geo-and-agentic.md` | GEO citability scoring, AI crawler table, brand signals, agent readiness (Lighthouse, llms.txt, WebMCP) |
+| `references/live-data.md` | Google API tiers, DataForSEO commands, cost guardrails, what each source can and cannot prove |
+| `references/plan-and-scale.md` | Strategic plan phases, programmatic SEO gates, e-commerce, SXO, FLOW, drift monitoring, site-quality gate |
+
+## References inside instagram-craft
+
+| File | What it covers |
+|---|---|
+| `references/plan-and-voice.md` | Weekly plan, voice profile, log and swipe files, engagement round |
+| `references/reel.md` | Reel shape, hook formulas, script, beats, on-screen text, rules |
+| `references/carousel-and-caption.md` | Carousel structure and files; caption jobs, hashtags, search terms, linter |
+| `references/story.md` | Daily Stories shape, stickers, DM funnel |
+| `references/engagement.md` | Comments on others, replies under your own posts, DMs and follow-ups |
+| `references/profile.md` | Profile scoring rubric and rewrite order |
+| `references/audit-and-research.md` | Post-mortem audit metrics; viral research and the swipe file |
+| `references/repurpose.md` | Extracting posts from one long asset |
+| `references/human-voice.md` | Humaniser, detection panel, what the tools do and do not prove |
+
+Scripts in `scripts/`: reel-hooks.json (26 formulas), reel-hookscore.py, reel-beats.py, caption.py, humanize.py, detect.py, slop.json, swipe.py, profile-rubric.json.
+
+## References inside youtube-craft
+
+| File | What it covers |
+|---|---|
+| `references/plan-and-voice.md` | Weekly plan, voice profile, capacity honesty |
+| `references/script-and-hooks.md` | Script shape, 21 hook formulas, scoring, retention beats |
+| `references/package-and-seo.md` | Title + thumbnail as one unit; description, tags, query test |
+| `references/retention-and-edit.md` | Retention diagnosis, edit decision lists, chapters |
+| `references/shorts-and-repurpose.md` | Shorts from long video; what survives without context |
+| `references/audit-and-research.md` | Channel audit (one fix); viral research by channel-relative multiple |
+
+Scripts in `scripts/`: hooks.json (21 formulas), hookscore.py, title.py, retention.py, deadair.py, chapters.py, swipe.py.
+
+## References inside coding-craft
+
+| File | What it covers |
+|---|---|
+| `references/tdd.md` | Red-green-refactor, prove-it bug pattern, test pyramid, good-test rules |
+| `references/debugging.md` | Stop-the-line, reproduce → localize → reduce → fix → guard → verify, three-fix rule |
+| `references/code-review.md` | Five-axis review, review process, receiving and requesting review, feedback loop |
+| `references/verification.md` | Iron law — run it fresh, read the output, claim only what it proves |
+| `references/simplification.md` | Simplify without changing behaviour — principles, process, language notes |
+| `references/api-design.md` | Contract-first API and interface design — REST, types, idempotency |
+| `references/api-integration.md` | Resilient third-party integration + Zod validation at boundaries |
+| `references/dependencies.md` | Dependency diagnosis, deprecation, and migration patterns |
+| `references/performance.md` | Measure → bottleneck → fix → verify → guard, with targets |
+| `references/observability.md` | Define working, signals, logs, metrics, traces, alerts, runbooks |
+| `references/testing-in-browser.md` | Playwright patterns + DevTools debugging workflow |
+| `references/docs-and-decisions.md` | ADRs, comments, API docs, README, changelog, first-reader check, teach-back |
+| `references/platform-notes.md` | Mobile-native feel, Swift, typed AI integration |
+
+## References inside ship-workflow
+
+| File | What it covers |
+|---|---|
+| `references/shape-the-idea.md` | Brainstorming, idea refinement, thinking-out-loud echo |
+| `references/planning.md` | Plan mode, dependency graph, vertical slices, tasks, checkpoints |
+| `references/constraints.md` | Written quality bar — floors, numbers, ratchets, guarding the bar |
+| `references/adversarial-review.md` | Doubt-driven review + fresh-context (Elephant–Goldfish) design review |
+| `references/executing.md` | Executing a plan — task loop, completion contract, final review |
+| `references/dispatching.md` | Dispatching parallel agents — pattern, briefs, subagent execution, ledger |
+| `references/incremental.md` | Thin verifiable slices + scope-creep detection on diffs |
+| `references/git-workflow.md` | Trunk-based git, atomic commits, worktrees, finishing a branch |
+| `references/ci-cd.md` | Quality-gate pipeline, GitHub Actions, deploy strategies, environments |
+| `references/oss-prs.md` | Open-source PR pipeline + fork PR handoff |
+| `references/launch.md` | Pre-launch checklist, flags, staged rollout, rollback, error budget |
+| `references/vercel.md` | Vercel cost/performance optimisation + preview environment parity |
+| `references/platform-ship.md` | Shipping a Chrome extension (MV3 + store) and an Expo app (EAS + stores) |
+
+## References inside codebase-intelligence
+
+| File | What it covers |
+|---|---|
+| `references/graphify.md` | Build/query a codebase knowledge graph — callers, impact, paths, hubs, explanations |
+| `references/trail-code.md` | Session learning trails on top of the graph — what was learned, what to re-check |
+| `references/source-driven.md` | Ground every decision in official docs — detect stack, fetch, implement, cite |
+| `references/commit-archaeology.md` | Reconstruct why code exists from git history, with evidence rules |
+| `references/learn-taste.md` | Turn corrections into lasting rules, with their why |
+| `references/context-packing.md` | Context hierarchy, packing strategies, budget, confusion handling |
+| `references/learn-by-rebuilding.md` | Learn by rebuilding from scratch; pick free APIs; autopsy dead projects |
+
+## References inside job-search
+
+| File | What it covers |
+|---|---|
+| `references/pipeline.md` | The application pipeline — profile, fit scoring, drafter-reviewer loop, ATS check, outcome tracking |
+| `references/discovery-jobspy.md` | Job discovery — board search into a table/CSV, search-only rules, rate and ToS limits |
+| `references/interview-prep.md` | Interview prep — mocks, OA sims, system design, HR rounds, resume roasts, company briefs, prep plans, honesty rules |
+| `references/verify-submission.md` | Submission verification — open-posting check, upload check, confirmation capture, follow-up mail classification |
+| `references/salary-negotiation.md` | Salary negotiation — market data, the three numbers, scripts, counter-offer traps |
+| `references/contracts-proposals.md` | Contracts and proposals — clauses, jurisdiction notes, templates, DOCX conversion |
+
+## References inside lead-gen
+
+| File | What it covers |
+|---|---|
+| `references/first-customer.md` | First-customer finding — public-signal research, qualification framework, report shape |
+| `references/scout.md` | Social-platform leads — 8 platforms, enrichment, 0–100 scoring, CSV export |
+| `references/maps-scraper.md` | Local-business leads from Maps — queries, depth, filters, rate limits, scraped-data rules |
+| `references/yc-outreach.md` | Founder outreach lists — batch search, guess labels, verify-first, draft-only |
+| `references/freelance-practice.md` | Freelance practice — positioning, pricing, pipeline, contracts, scope creep |
+| `references/email-verify.md` | Email checks — verdicts, SMTP limits stated honestly, deliverability routing |
+| `references/web-research-ops.md` | Web research operations — routing a research question, site-to-API, read-only browser checks |
+
+## References inside video-craft
+
+| File | What it covers |
+|---|---|
+| `references/stickman-director.md` | Stickman videos — director vs autopilot, 5-stage story engine, style catalog, voice continuity |
+| `references/hypit.md` | Hypit — directed generated-media video, component authoring, voice continuity |
+| `references/lapoz-reels.md` | Premium talking-head reels — four templates, word-level karaoke captions, render + verify |
+| `references/hyperframes.md` | HTML-to-video — composition contract, registry-first, lint + check gates, deterministic render |
+| `references/openmontage.md` | Full-pipeline production — pipeline-first, capability envelope, zero-key path, runtime choice |
+| `references/watch-voice-audio.md` | Watch a video + voiceover — engines, transcript limits, voice generation, sample-rate gate |
+| `references/code-graphics.md` | Code-drawn graphics — Manim scenes, isometric SVG explainer method, fetching source media |
+
+## References inside linkedin-craft
+
+| File | What it covers |
+|---|---|
+| `references/post-writing.md` | Post writing — hook formulas, post structure, hook extraction |
+| `references/comments-replies.md` | Comments and replies — drafting, thread sweeps, thread monitoring, engager analytics |
+| `references/profile-and-planning.md` | Profile optimiser + content planner — pillars, founder angles, weekly plans |
+| `references/repurpose-advocacy.md` | Repurposing + advocacy + interviewer — cross-platform adaptation, team advocacy, story bank |
+| `references/humanizer-audit.md` | Humanizer audit — AI-tell removal, emoji density, detector audit, pre-publish review |
+
 ## Principles
 - **Complete, not partial.** Every check runs. N/A only with evidence the mechanism doesn't exist.
 - **Evidence, not claims.** A check passes only on observed behaviour (live probe or test output).
@@ -200,4 +349,4 @@ One repo, complete skills. Nothing partial — every check, every step, verified
 - **Graph first.** Build the project graph before reading code; update it after changes. Never read the whole codebase.
 
 ## Provenance
-Built from the 85-check pre-launch audit (Mayank Shah v2.0), OWASP Top 10 (2025 + LLM), the Cloudflare 6-phase audit workflow, viral pre-launch checklists, SkillOpt (Microsoft) for skill evolution, GitHub Spec Kit (github/spec-kit, MIT) for spec-kit, and the Strix pentest skill family (Apache-2.0, summarised tool-generically) plus OWASP Top 10:2025 / API Security Top 10 (2023) for pentest.
+Built from the 85-check pre-launch audit (Mayank Shah v2.0), OWASP Top 10 (2025 + LLM), the Cloudflare 6-phase audit workflow, viral pre-launch checklists, SkillOpt (Microsoft) for skill evolution, GitHub Spec Kit (github/spec-kit, MIT) for spec-kit, and the Strix pentest skill family (Apache-2.0, summarised tool-generically) plus OWASP Top 10:2025 / API Security Top 10 (2023) for pentest. Batch 2 (19 Nov 2026): `seo` from 28 sources (MIT, AgriciDaniel; FLOW prompts CC BY 4.0), `instagram-craft` from 13 and `youtube-craft` from 11 (no license files in source dirs; scripts/data copied as functional assets), `coding-craft` from 24, `ship-workflow` from 23, `codebase-intelligence` from 9, `job-search` from 7, `lead-gen` from 11, `video-craft` from 11 (openmontage AGPLv3 and ghost-downloader GPLv3 method/usage only, no code), `linkedin-craft` from the linkedin-skills bundle (MIT, distilled, draft-only) — all distilled in own words; pilots gated PASS per skill-evolution (every new skill 4/4 validation).
