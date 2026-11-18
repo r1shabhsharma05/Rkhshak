@@ -31,6 +31,7 @@ This repo's skills work with **any agent that reads SKILL.md** — Claude, Codex
 | `video-craft` | `skills/video-craft/SKILL.md` | Direct or produce a short video — stickman, premium reels, HTML-to-video, code-to-video — analyse video, generate voiceover. |
 | `linkedin-craft` | `skills/linkedin-craft/SKILL.md` | Plan, draft, or audit LinkedIn posts, comments, replies, or profiles. Draft only — the owner posts himself. |
 | `multi-agent-team` | `skills/multi-agent-team/SKILL.md` | Run one owner and a team of specialist agents as a single unit — one command in, gated research, human plan, test after every step, nothing ships without the owner's pass. |
+| `outreach-craft` | `skills/outreach-craft/SKILL.md` | Write, send, follow up, and diagnose cold outreach — email, WhatsApp, calls — with hard rewrite triggers and a log that makes the next decision visible. Draft + approval by default. |
 
 ## Rules that apply to every agent
 - Audit/fix only the user's own project. Never touch what the user does not own or has no authorization for.
