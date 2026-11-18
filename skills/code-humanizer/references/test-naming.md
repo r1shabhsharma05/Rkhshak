@@ -23,7 +23,7 @@ A test name is the documentation of what the code does. When a test fails, its n
 ## Test style (the human part)
 - **Arrange, act, assert — visible.** Setup, the call, the check — in that order, with a blank line between them. A reader sees the shape before reading the lines.
 - **No magic in setup.** A helper that builds test data is named for what it builds (`aLoggedInUser()`, `anUnpaidInvoice()`), not `setup()` or `data()`.
-- **Real values, not placeholders.** `rishabh@example.com` beats `test@test.com`. A real-looking value is easier to read and harder to confuse with a placeholder.
+- **Real values, not placeholders.** `alex@example.com` beats `test@test.com`. A real-looking value is easier to read and harder to confuse with a placeholder.
 - **Delete the test that tests nothing.** A test with no assertion, or one that passes no matter what the code does, is worse than no test — it claims coverage that doesn't exist.
 
 ## Audit checks
