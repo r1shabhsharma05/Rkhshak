@@ -20,7 +20,7 @@ Fix a security finding with the LEAST code possible. No unnecessary code, no rew
 ## Workflow
 1. **Read the finding.** Read the audit finding + its evidence (file:line, live probe output, severity). Do not re-audit — the finding is already established.
 2. **Graph first.** Build or read the project graph (graphify) to locate the exact code. Never read the whole codebase — read only the specific files the graph points to.
-3. **Smallest complete change.** Fix the root cause with the minimum code that fully closes the issue. One finding = one focused change. Do not refactor, do not add features, do not touch unrelated code. Use the known-good pattern for the vulnerability class (`references/fix-patterns.md`) — copy the pattern, adapt only the names. If no pattern fits, say so; don't invent one. A vulnerable dependency goes through `references/dependency-fix.md` (upgrade, patch, fork, or replace, in that order).
+3. **Smallest complete change.** Fix the root cause with the minimum code that fully closes the issue. One finding = one focused change. Do not refactor, do not add features, do not touch unrelated code. Use the known-good pattern for the vulnerability class (`references/fix-patterns.md`) — copy the pattern, adapt only the names. If no pattern fits, say so; don't invent one. For schema validation, file uploads, destructive paths, model output, and data minimization, use `references/boundary-fix-patterns.md`. A vulnerable dependency goes through `references/dependency-fix.md` (upgrade, patch, fork, or replace, in that order). A finding proven by a pentest goes through `references/pentest-fix-verify.md` (re-run the exploit to prove it is dead).
 4. **Server-side, always.** Enforce every rule on the server, never only in the UI. Hiding a button is not a fix.
 5. **Test the fix.** Run the check that failed, with fresh evidence (test output or live probe). A fix is not done until the check passes on evidence. Follow `references/verify-rollback.md`: re-run the failing check, write a regression test, get independent verification, and plan the rollback before pushing.
 6. **Re-test the app.** After the fix, re-test login, the app's main feature, and payment (if any). Report the result. A fix that breaks the app is not a fix.
@@ -36,6 +36,8 @@ Fix a security finding with the LEAST code possible. No unnecessary code, no rew
 | `references/secret-rotation.md` | A leaked secret, step by step in order — rotate first, remove second, purge last, verify, record. |
 | `references/hotfix-process.md` | Emergency fix for a live vulnerability — triage, contain, smallest fix, test, deploy + verify on live, disclose. |
 | `references/dependency-fix.md` | A vulnerable dependency — upgrade, patch, fork, or replace, in that order, with the record for each. |
+| `references/pentest-fix-verify.md` | Fix a finding proven by a pentest — triage by severity, fix the root cause, re-run the exploit to prove it is dead. |
+| `references/boundary-fix-patterns.md` | Extra fix patterns — schema validation, file uploads, destructive paths, model output handling, data minimization. |
 
 ## Fix rules (never break)
 - **Least code.** The smallest change that fixes the root cause. If a one-line server-side check closes it, that is the fix. No extra helpers, no new abstractions, no "while I'm here" changes.
