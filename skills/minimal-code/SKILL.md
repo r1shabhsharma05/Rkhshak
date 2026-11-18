@@ -23,12 +23,12 @@ No setup. No config. The agent reads this skill and the references, then writes 
 Works with Claude, Codex, and any agent that reads SKILL.md. The rules are written as plain checks, not model-specific tricks.
 
 ## Workflow
-1. **Understand the task.** What is the smallest change that solves it completely? Say it in one sentence before writing any code. List every place the change must reach: callers, tests, fixtures, config, exports.
+1. **Understand the task.** What is the smallest change that solves it completely? Say it in one sentence before writing any code. Before coding, state your assumptions in one line — if anything is unclear, or more than one reading exists, ask; never pick silently. If a simpler approach exists, say so and push back. List every place the change must reach: callers, tests, fixtures, config, exports. (See `references/karpathy-guidelines.md`.)
 2. **Run the decision ladder** (see `references/ponytail.md` — the ponytail method, merged here). Take the first option that fully works: (1) does it need to exist? (2) already in this codebase? (3) stdlib/platform feature? (4) an installed dependency? (5) one line a reader gets at a glance? (6) otherwise, the minimum code that works.
 3. **Delete first.** Before adding anything, remove what the change makes unnecessary (see `references/delete-first.md`). A change that deletes more than it adds is a good change.
 4. **Write the smallest complete change.** One job, one place, no speculation. If the task doesn't ask for it, don't build it. Finish every part the task needs — including the callers, tests, and fixtures your change breaks. A shortcut with a known limit gets a `shortcut: <the limit>, <when to upgrade>` comment.
 5. **Shrink what you wrote.** Re-read the change. Remove the duplicate, the wrapper, the one-use helper, the defensive check that can't happen. If a line doesn't earn its place, delete it.
-6. **Verify.** Run the checks in `references/measure.md`: tests pass, no dead code, the diff is as small as it can be. Report the diff size (lines added vs lines removed). End with one or two lines: what you skipped or did not check, and any risk the user must know.
+6. **Verify.** Before each step, say what "done" means for it in a check you can run, then loop until that check passes — never claim a step done unverified. Run the checks in `references/measure.md`: tests pass, no dead code, the diff is as small as it can be. Report the diff size (lines added vs lines removed). End with one or two lines: what you skipped or did not check, and any risk the user must know. (See `references/karpathy-guidelines.md`.)
 7. **Judge abstractions.** Before abstracting, run `references/abstraction-judgment.md` (AHA): rule of three, same reason to change, clear name, no flag-soup. If the abstraction isn't earned yet, leave the duplication.
 8. **YAGNI.** Before adding anything, run `references/yagni.md`: is there a requirement, a user, or a test that needs this today? If not, don't build it. No config for one value, no future-proof frameworks, no dead code kept "in case".
 9. **Dependency diet.** Before adding a dependency, run `references/dependency-minimalism.md`: count them, make it earn its place, one per job, small + maintained, remove what you don't use.
@@ -47,6 +47,7 @@ Works with Claude, Codex, and any agent that reads SKILL.md. The rules are writt
 | `references/dependency-minimalism.md` | The dependency diet — count them, make each earn its place, one per job, small + maintained, remove unused |
 | `references/config-minimalism.md` | Config diet — sane defaults, no config for one value, every option has a user, config in one place |
 | `references/api-surface-minimalism.md` | API surface diet — fewest endpoints, fewest params, no speculative endpoints, one shape per resource |
+| `references/karpathy-guidelines.md` | The four Karpathy principles, distilled — ask before coding, per-step success criteria; simplicity + surgical change map to the refs above |
 
 ## Levels
 | Level | Behavior |
@@ -68,3 +69,5 @@ Works with Claude, Codex, and any agent that reads SKILL.md. The rules are writt
 - **Smallest complete change.** "Complete" matters as much as "smallest" — the change must fully solve the task, with tests, not half of it.
 - **Readability beats brevity.** Minimal is not golf. If removing a line makes the code harder to read, keep the line. A clear name is worth a line. A comment that explains WHY is worth a line.
 - **One change, one diff.** A change does one thing. If it does two things, split it.
+- **Ask, don't guess.** State assumptions before coding; if anything is unclear, or more than one reading exists, ask — never pick silently.
+- **Define done, then verify it.** Every step gets a checkable success criterion before it starts; loop until the check passes, never claim done unverified.

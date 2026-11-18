@@ -16,7 +16,7 @@ This repo's skills work with **any agent that reads SKILL.md** — Claude, Codex
 | `pentest` | `skills/pentest/SKILL.md` | Pentest, hack, security-test, or exploit-test your own app, API, or repo — active exploitation with proof. Staging first, authorized targets only. |
 | `design-unslop` | `skills/design-unslop/SKILL.md` | Design a screen/app so it never looks vibe-coded, or transform a vibe-coded app into a massive design. |
 | `code-humanizer` | `skills/code-humanizer/SKILL.md` | Write code that reads like a human wrote it — remove AI tells, use human style, rewrite AI code to pass review. |
-| `minimal-code` | `skills/minimal-code/SKILL.md` | Write the least code that solves the problem — delete first, use the library, no dead code, no speculation. |
+| `minimal-code` | `skills/minimal-code/SKILL.md` | Write the least code that solves the problem — delete first, use the library, no dead code, no speculation. Ask before coding; per-step success criteria, verified in a loop (Karpathy guidelines merged as a reference). |
 | `skill-evolution` | `skills/skill-evolution/SKILL.md` | Improve any agent skill like training a neural network — epochs, learning rate, validation gates, nightly sleep cycles. |
 | `spec-kit` | `skills/spec-kit/SKILL.md` | Build a feature or project spec-first, or run the bug / idea-assessment extensions. |
 | `motion-craft` | `skills/motion-craft/SKILL.md` | Animate something, fix janky motion, audit/remove motion, or name an effect. |
