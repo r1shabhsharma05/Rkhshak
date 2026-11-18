@@ -13,10 +13,13 @@ This repo's skills work with **any agent that reads SKILL.md** — Claude, Codex
 |---|---|---|
 | `security-audit` | `skills/security-audit/SKILL.md` | Audit, security-check, or verify production readiness; before any production deploy/launch. |
 | `security-fix` | `skills/security-fix/SKILL.md` | Fix a security finding the user approved, with the least code possible. |
+| `pentest` | `skills/pentest/SKILL.md` | Pentest, hack, security-test, or exploit-test your own app, API, or repo — active exploitation with proof. Staging first, authorized targets only. |
 | `design-unslop` | `skills/design-unslop/SKILL.md` | Design a screen/app so it never looks vibe-coded, or transform a vibe-coded app into a massive design. |
 | `code-humanizer` | `skills/code-humanizer/SKILL.md` | Write code that reads like a human wrote it — remove AI tells, use human style, rewrite AI code to pass review. |
 | `minimal-code` | `skills/minimal-code/SKILL.md` | Write the least code that solves the problem — delete first, use the library, no dead code, no speculation. |
 | `skill-evolution` | `skills/skill-evolution/SKILL.md` | Improve any agent skill like training a neural network — epochs, learning rate, validation gates, nightly sleep cycles. |
+| `spec-kit` | `skills/spec-kit/SKILL.md` | Build a feature or project spec-first, or run the bug / idea-assessment extensions. |
+| `motion-craft` | `skills/motion-craft/SKILL.md` | Animate something, fix janky motion, audit/remove motion, or name an effect. |
 
 ## Rules that apply to every agent
 - Audit/fix only the user's own project. Never touch what the user does not own or has no authorization for.
