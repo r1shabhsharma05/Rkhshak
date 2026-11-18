@@ -27,6 +27,7 @@ One repo, complete skills. Nothing partial — every check, every step, verified
 | `lead-gen` | Find evidence-backed first customers and leads from public signals, draft outreach that is never sent, verify contact details honestly. | ✅ Ready |
 | `video-craft` | Direct and produce short videos — stickman, premium reels, HTML-to-video, code-to-video, full-pipeline — analyse video, generate voiceover. | ✅ Ready |
 | `linkedin-craft` | Plan, draft, audit, and humanise LinkedIn posts, comments, replies, and profiles — DRAFT ONLY, the owner posts himself. | ✅ Ready |
+| `multi-agent-team` | Run one owner and a team of specialist agents as a single unit — one command in, research gated by the whole team, a human-readable plan, execution with a test after every step, and nothing ships without the owner's pass. | ✅ Ready |
 
 ## How to use
 1. Copy `skills/security-audit/` into your agent's skills folder (or read `skills/security-audit/SKILL.md` directly).
@@ -340,6 +341,19 @@ Scripts in `scripts/`: hooks.json (21 formulas), hookscore.py, title.py, retenti
 | `references/repurpose-advocacy.md` | Repurposing + advocacy + interviewer — cross-platform adaptation, team advocacy, story bank |
 | `references/humanizer-audit.md` | Humanizer audit — AI-tell removal, emoji density, detector audit, pre-publish review |
 
+## References inside multi-agent-team
+
+| File | What it covers |
+|---|---|
+| `references/team-roles.md` | All 8 roles — job, inputs, outputs, done-criteria, skill routes |
+| `references/research-gate.md` | Research note format, review lenses, unanimous pass, 2-round cap |
+| `references/plan-format.md` | Human plan template, [P] markers, frozen-plan rule, change protocol |
+| `references/execution-loop.md` | Dispatch pattern, brief structure, shared ledger, fix loop cap |
+| `references/handoff-protocol.md` | Shared board, message format, Master-only-to-owner rule, escalation |
+| `references/test-gate.md` | Verifier independence, production-style checks, evidence standard |
+| `references/reference-rebuild.md` | Reference extraction, rebuild, side-by-side diff, zero-diff rule |
+| `references/continuous-ops.md` | Schedules, shared queue, per-run reports, honest limits |
+
 ## Principles
 - **Complete, not partial.** Every check runs. N/A only with evidence the mechanism doesn't exist.
 - **Evidence, not claims.** A check passes only on observed behaviour (live probe or test output).
@@ -349,4 +363,4 @@ Scripts in `scripts/`: hooks.json (21 formulas), hookscore.py, title.py, retenti
 - **Graph first.** Build the project graph before reading code; update it after changes. Never read the whole codebase.
 
 ## Provenance
-Built from the 85-check pre-launch audit (Mayank Shah v2.0), OWASP Top 10 (2025 + LLM), the Cloudflare 6-phase audit workflow, viral pre-launch checklists, SkillOpt (Microsoft) for skill evolution, GitHub Spec Kit (github/spec-kit, MIT) for spec-kit, and the Strix pentest skill family (Apache-2.0, summarised tool-generically) plus OWASP Top 10:2025 / API Security Top 10 (2023) for pentest. Batch 2 (19 Nov 2026): `seo` from 28 sources (MIT, AgriciDaniel; FLOW prompts CC BY 4.0), `instagram-craft` from 13 and `youtube-craft` from 11 (no license files in source dirs; scripts/data copied as functional assets), `coding-craft` from 24, `ship-workflow` from 23, `codebase-intelligence` from 9, `job-search` from 7, `lead-gen` from 11, `video-craft` from 11 (openmontage AGPLv3 and ghost-downloader GPLv3 method/usage only, no code), `linkedin-craft` from the linkedin-skills bundle (MIT, distilled, draft-only) — all distilled in own words; pilots gated PASS per skill-evolution (every new skill 4/4 validation).
+Built from the 85-check pre-launch audit (Mayank Shah v2.0), OWASP Top 10 (2025 + LLM), the Cloudflare 6-phase audit workflow, viral pre-launch checklists, SkillOpt (Microsoft) for skill evolution, GitHub Spec Kit (github/spec-kit, MIT) for spec-kit, and the Strix pentest skill family (Apache-2.0, summarised tool-generically) plus OWASP Top 10:2025 / API Security Top 10 (2023) for pentest. Batch 2 (19 Nov 2026): `seo` from 28 sources (MIT, AgriciDaniel; FLOW prompts CC BY 4.0), `instagram-craft` from 13 and `youtube-craft` from 11 (no license files in source dirs; scripts/data copied as functional assets), `coding-craft` from 24, `ship-workflow` from 23, `codebase-intelligence` from 9, `job-search` from 7, `lead-gen` from 11, `video-craft` from 11 (openmontage AGPLv3 and ghost-downloader GPLv3 method/usage only, no code), `linkedin-craft` from the linkedin-skills bundle (MIT, distilled, draft-only) — all distilled in own words; pilots gated PASS per skill-evolution (every new skill 4/4 validation). `multi-agent-team` (20th skill, 19 Nov 2026): distilled in own words from dispatching-parallel-agents, executing-plans, brainstorming, verification-before-completion, elephant-goldfish-model, advisor-orchestrator-worker, agency-agents (roles only); routes to the other Rkhshak skills instead of re-teaching them; pilot gated PASS (train 8/8, validation 4/4 vs baseline 2/8 and 0/4), shipped v1 as-is, no edit.
